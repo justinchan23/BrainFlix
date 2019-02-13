@@ -14,10 +14,18 @@ class MainContent extends React.Component {
                 <h5 class="main__descriptionDate">12/18/2018</h5>
               </div>
               <div class="main__descriptionViewsLikes">
-                <img src="Assets/Icons/SVG/Icon-views.svg" class="main__descriptionIcon" alt="" />
+                <img
+                  src={require('../Assets/Icons/SVG/Icon-views.svg')}
+                  class="main__descriptionIcon"
+                  alt=""
+                />
                 <h5 class="main__descriptionNum">1,001,023</h5>
 
-                <img src="Assets/Icons/SVG/Icon-likes.svg" class="main__descriptionIcon" alt="" />
+                <img
+                  src={require('../Assets/Icons/SVG/Icon-likes.svg')}
+                  class="main__descriptionIcon"
+                  alt=""
+                />
                 <h5 class="main__descriptionNum">110,985</h5>
               </div>
             </div>
@@ -74,7 +82,6 @@ class MainContent extends React.Component {
                   <button class="commentContent__delete" id="commentContent__deleteButton">
                     Delete
                   </button>
-                  <button class="commentContent__like">0 Likes</button>
                 </div>
                 <div class="commentJava__section">
                   <img
@@ -92,7 +99,6 @@ class MainContent extends React.Component {
                   <button class="commentContent__delete" id="commentContent__deleteButton">
                     Delete
                   </button>
-                  <button class="commentContent__like">0 Likes</button>
                 </div>
                 <div class="commentJava__section">
                   <img
@@ -110,7 +116,6 @@ class MainContent extends React.Component {
                   <button class="commentContent__delete" id="commentContent__deleteButton">
                     Delete
                   </button>
-                  <button class="commentContent__like">0 Likes</button>
                 </div>
               </div>
             </div>

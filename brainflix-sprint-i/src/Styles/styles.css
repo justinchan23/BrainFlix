@@ -514,6 +514,7 @@ textarea:focus {
 
 .main__descriptionIcon {
   vertical-align: middle;
+  margin: 5px;
 }
 
 .main__descriptionName {
