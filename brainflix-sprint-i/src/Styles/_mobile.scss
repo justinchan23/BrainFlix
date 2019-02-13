@@ -1,0 +1,207 @@
+/* MEDIA FOR PHONES -----------*/
+
+@media screen and (max-width: 670px) {
+  $mobileMargin: 16px;
+
+  /* ------- HEADER/NAV ------ */
+
+  nav {
+    height: 169px;
+  }
+
+  .nav {
+    &__item {
+      width: 320px;
+      flex-wrap: wrap;
+      display: flex;
+      padding: 0;
+      justify-content: center;
+    }
+
+    &__logo {
+      margin: 12px 0;
+    }
+
+    &__items {
+      margin: 0 $mobileMargin;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+    }
+  }
+
+  header {
+    height: 169px;
+  }
+
+  /* ------- MAIN ------ */
+
+  .main {
+    &__artistName {
+      width: 250px;
+      margin-left: 16px;
+    }
+
+    &__background {
+      height: 183px;
+    }
+
+    &__content {
+      padding: 0 $mobileMargin;
+    }
+  }
+
+  /* ------- MAIN CONTENT ------ */
+
+  .content {
+    margin-bottom: 40px;
+
+    &__mainCenter {
+      padding: 0;
+    }
+
+    &__main {
+      padding: 0px 16px;
+    }
+  }
+
+  .img__about {
+    @include maxWidth;
+    height: auto;
+  }
+
+  .asideSection__div {
+    margin: 24px 0 0 0;
+  }
+
+  .main__videoImageFull {
+    width: 100%;
+  }
+
+  .main__videoImage {
+    width: 100%;
+  }
+
+  .main__descriptionHeader {
+    padding: 32px 0 16px 0;
+  }
+
+  /* ------- GLOBAL/FONTS/RESET ------ */
+
+  .padding--lg {
+    padding: 8px 0 0 0;
+  }
+
+  h1,
+  .h1_heroHeader {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $boldFont;
+    padding: 32px 0 24px 0;
+  }
+
+  h2 {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: $demiBoldFont;
+    padding: 0;
+  }
+
+  h3 {
+    padding: 8px 0;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  h4,
+  li {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  h5,
+  th,
+  td {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /* ------- COMMENTS SECTION ------ */
+
+  .commentContent {
+    &__main {
+      padding: 0px;
+    }
+
+    &__section {
+      margin: 16px 0 0 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &__button {
+      margin-bottom: 32px;
+    }
+  }
+
+  #commentSubmit {
+    margin: 0 0 0 16px;
+  }
+
+  .commentJava__section {
+    @include marginZero;
+    padding: 24px 0;
+    @include maxWidth;
+  }
+
+  .commentJava__comment {
+    margin-top: 16px;
+  }
+
+  input,
+  textarea {
+    width: 180px;
+    height: 100px;
+  }
+
+  .commentContent__commentNew {
+    width: 206px;
+    height: 100px;
+  }
+
+  .commentContent__pic {
+    margin-top: 24px;
+  }
+
+  .nav__search {
+    margin: 0;
+    width: 270px;
+  }
+
+  .nav__button {
+    margin: 8px 16px 16px 0;
+    width: 224px;
+  }
+
+  .nav__profilePic {
+    margin: 8px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main__videoImageFull {
+    width: 100%;
+    height: 183px;
+  }
+
+  .main__videoImage {
+    width: 100%;
+    height: 183px;
+  }
+}

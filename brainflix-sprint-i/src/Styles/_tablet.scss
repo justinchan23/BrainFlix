@@ -1,0 +1,220 @@
+/* MEDIA FOR TABLET------------- */
+
+@media screen and (min-width: 1400px) {
+  .commentContent {
+    justify-content: center;
+    width: 712px;
+  }
+
+  .commentContent__main,
+  .main__contentMainDiv {
+    width: 712px;
+  }
+
+  .asideSection__heading {
+    margin: 40px 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  /* ------- VARIABLES ------ */
+  $tabletMargin: 24px;
+
+  /* ------- HEADER/NAV ------ */
+
+  header nav ul {
+    margin-left: $tabletMargin;
+  }
+
+  .nav__items {
+    margin: 0 $tabletMargin;
+  }
+
+  /* ------- MAIN CONTENT ------ */
+
+  .main__content {
+    padding: 0px $tabletMargin;
+    justify-content: left;
+  }
+
+  /* ------- COMMENT SECTION ------ */
+
+  .commentJava__section {
+    /*margin: 0 96px;*/
+    /*width: 528px; */
+    padding: 24px 0;
+  }
+
+  // .commentJava__comment {
+  //   width: 624px;
+  // }
+
+  .commentContent__h1 {
+    padding-top: 32px;
+  }
+}
+
+#commentJava {
+  justify-content: left;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .main__videoImageFull {
+    width: 700px;
+    height: 400px;
+  }
+
+  .main__videoImage {
+    height: 400px;
+    width: 700px;
+  }
+
+  .main__contentMain {
+    width: 720px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1135px) {
+  .asideSection__heading {
+    margin: 0 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .img__about {
+    @include maxWidth;
+    height: auto;
+  }
+
+  input,
+  textarea {
+    width: 442px;
+  }
+
+  .commentJava__section {
+    margin: 0;
+  }
+
+  .main__videoImageFull {
+    width: 100%;
+    height: auto;
+  }
+
+  .main__videoImage {
+    height: auto;
+    width: 100%;
+  }
+
+  .asideSection__heading {
+    margin: 0 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .commentContent__main {
+    width: 288px;
+  }
+
+  .commentContent {
+    &__main {
+      padding: 0px;
+    }
+
+    &__section {
+      margin: 16px 0 0 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &__button {
+      margin-bottom: 32px;
+    }
+
+    .main__videoFullDescription {
+      width: 100%;
+    }
+  }
+
+  #commentSubmit {
+    margin: 0 0 0 16px;
+  }
+
+  .commentJava__section {
+    @include marginZero;
+    padding: 24px 0;
+    @include maxWidth;
+  }
+
+  .commentJava__comment {
+    margin-top: 16px;
+  }
+
+  input,
+  textarea {
+    width: 180px;
+    height: 100px;
+  }
+
+  .commentContent__commentNew {
+    width: 205px;
+    height: 100px;
+  }
+
+  .commentContent__pic {
+    margin-top: 24px;
+  }
+
+  .main__videoFullDescription {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    &__item {
+      padding: 8px 0;
+    }
+  }
+
+  .content__header {
+    padding: 32px 0 16px 0;
+  }
+
+  h1,
+  .h1_heroHeader {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $boldFont;
+    padding: 32px 0 24px 0;
+  }
+
+  h2 {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: $demiBoldFont;
+    padding: 0;
+  }
+
+  .footer__inline {
+    padding-top: 24px;
+  }
+
+  .main__videoFullDescription {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main__descriptionViewsLikes {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .main__videoFullDescription {
+    width: 100%;
+  }
+}
