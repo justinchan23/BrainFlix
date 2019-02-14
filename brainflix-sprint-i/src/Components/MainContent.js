@@ -40,7 +40,7 @@ class MainContent extends React.Component {
             commentTextbox={this.props.commentTextbox}
             addComment={this.props.addComment}
             itemText={this.props.itemText}
-            removeComment={this.props.removeComment}
+            deleteComment={this.props.deleteComment}
           />
         </div>
 

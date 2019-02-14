@@ -19,7 +19,7 @@ class CommentsSection extends React.Component {
             className="commentContent__delete"
             id="commentContent__deleteButton"
             onClick={() => {
-              this.props.removeComment(i)
+              this.props.deleteComment(i)
             }}
           >
             Delete
@@ -40,7 +40,7 @@ class CommentsSection extends React.Component {
               className="commentContent__pic"
               alt=""
             />
-            <form id="commentSubmit">
+            <form id="commentSubmit" onSubmit={event => event.preventDefault()}>
               <label>JOIN THE CONVERSATION</label>
               <input
                 className="commentContent__name commentContent__commentNew"

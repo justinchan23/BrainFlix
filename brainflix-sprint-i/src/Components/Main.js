@@ -70,7 +70,7 @@ class Main extends React.Component {
     }
   }
 
-  removeComment = key => {
+  deleteComment = key => {
     this.state.currentVideo.comments.splice(key, 1)
     this.setState(
       Object.assign(this.state.currentVideo, { comments: this.state.currentVideo.comments })
@@ -94,7 +94,7 @@ class Main extends React.Component {
           commentTextbox={this.commentTextbox}
           addComment={this.addComment}
           itemText={this.state.itemText}
-          removeComment={this.removeComment}
+          deleteComment={this.deleteComment}
         />
       </div>
     )
