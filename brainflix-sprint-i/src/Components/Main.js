@@ -33,7 +33,7 @@ class Main extends React.Component {
             name: 'Michael',
             comment:
               'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
-            id: 'a41f3802-8db7-45d4-95e4-142aeecd1aa4',
+            id: 'a41f3802-8db7-45d4-95e4-142beecd1aa4',
             timestamp: 1530744338878
           }
         ]
@@ -44,9 +44,13 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <main class="main">
-          <div class="main__videoImage">
-            <video controls poster={this.state.currentVideo.image} class="main__videoImageFull" />
+        <main className="main">
+          <div className="main__videoImage">
+            <video
+              controls
+              poster={this.state.currentVideo.image}
+              className="main__videoImageFull"
+            />
           </div>
         </main>
         <MainContent currentVideo={this.state.currentVideo} />

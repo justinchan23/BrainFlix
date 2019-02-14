@@ -6,28 +6,28 @@ class Nav extends React.Component {
       <div>
         <header>
           <nav>
-            <div class="nav__items">
-              <div class="nav__item">
+            <div className="nav__items">
+              <div className="nav__item">
                 <a href="index.html">
                   <img
                     src={require('../Assets/Logo/Logo-brainflix.png')}
-                    class="nav__logo"
+                    className="nav__logo"
                     alt=""
                   />
                 </a>
               </div>
-              <div class="nav__item">
+              <div className="nav__item">
                 <input
-                  class="nav__search nav__spacing"
+                  className="nav__search nav__spacing"
                   type="text"
                   id="search"
                   name="search"
                   placeholder="Search"
                 />
-                <button class="nav__button nav__spacing">+ UPLOAD</button>
+                <button className="nav__button nav__spacing">+ UPLOAD</button>
                 <img
                   src={require('../Assets/Images/Mohan-muruge.jpg')}
-                  class="nav__profilePic"
+                  className="nav__profilePic"
                   alt=""
                 />
               </div>

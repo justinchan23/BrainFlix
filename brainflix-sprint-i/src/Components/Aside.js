@@ -59,17 +59,17 @@ class Aside extends React.Component {
   render() {
     const videoList = this.state.videos.map(video => {
       return (
-        <div class="asideSection__div">
-          <img src={video.image} class="asideSection__previewPic" alt="" />
-          <h3 class="asideSection__title">{video.title}</h3>
-          <h5 class="asideSection__name">{video.channel}</h5>
+        <div className="asideSection__div" key={video.id}>
+          <img src={video.image} className="asideSection__previewPic" alt="" />
+          <h3 className="asideSection__title">{video.title}</h3>
+          <h5 className="asideSection__name">{video.channel}</h5>
         </div>
       )
     })
 
     return (
-      <aside class="asideSection">
-        <h5 class="asideSection__heading">NEXT VIDEO</h5>
+      <aside className="asideSection">
+        <h5 className="asideSection__heading">NEXT VIDEO</h5>
         {videoList}
       </aside>
     )
