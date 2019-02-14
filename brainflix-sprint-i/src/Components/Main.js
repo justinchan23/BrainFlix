@@ -46,12 +46,12 @@ class Main extends React.Component {
 
   commentTextbox = event => {
     this.setState({ itemText: event.target.value })
-    console.log(this.state.itemText)
+    //console.log(this.state.itemText)
   }
 
-  addComment = event => {
-    event.preventDefault()
-    console.log(this.state.itemText)
+  addComment = () => {
+    //event.preventDefault()
+    //console.log(this.state.itemText)
     const newComment = this.state.currentVideo.comments.concat({
       name: 'Justin Chan',
       comment: this.state.itemText,

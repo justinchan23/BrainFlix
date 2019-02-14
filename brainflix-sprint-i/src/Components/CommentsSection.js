@@ -3,7 +3,7 @@ import dateCalculator from '../Scripts/dateCalculator'
 
 class CommentsSection extends React.Component {
   render() {
-    const commentList = this.props.currentVideo.comments.map(comment => {
+    var commentList = this.props.currentVideo.comments.map(comment => {
       var dateSince = dateCalculator(comment.timestamp)
       return (
         <div className="commentJava__section" key={comment.id}>
@@ -42,7 +42,7 @@ class CommentsSection extends React.Component {
                 id="name"
                 name="name"
                 placeholder="Type your comment here"
-                onChange={event => this.props.commentTextbox(event)}
+                onChange={this.props.commentTextbox}
                 value={this.props.itemText}
               />
             </form>
@@ -50,12 +50,12 @@ class CommentsSection extends React.Component {
               className="commentContent__button"
               id="commentContent__addButton"
               type="submit"
-              onClick={event => this.props.addComment(event)}
+              onClick={this.props.addComment}
             >
               COMMENT
             </button>
           </div>
-          <div id="commentJava">{commentList}</div>
+          <div id="commentJava">{commentList.reverse()}</div>
         </div>
       </div>
     )
