@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Nav from './Components/Nav'
 import TopButton from './Components/TopButton'
 import Main from './Components/Main'
-import MainContent from './Components/MainContent'
 
 class App extends Component {
   render() {
@@ -12,7 +11,6 @@ class App extends Component {
         <Nav />
         <Main />
         <TopButton />
-        <MainContent />
       </div>
     )
   }
