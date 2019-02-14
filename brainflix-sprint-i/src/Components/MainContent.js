@@ -35,8 +35,12 @@ class MainContent extends React.Component {
           <div className="main__videoFullDescription">
             <p>{this.props.currentVideo.description}</p>
           </div>
-
-          <CommentsSection currentVideo={this.props.currentVideo} />
+          <CommentsSection
+            currentVideo={this.props.currentVideo}
+            commentTextbox={this.props.commentTextbox}
+            addComment={this.props.addComment}
+            itemText={this.props.itemText}
+          />
         </div>
 
         <Aside />

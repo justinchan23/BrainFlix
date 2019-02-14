@@ -39,8 +39,31 @@ class Main extends React.Component {
             timestamp: 1530744338878
           }
         ]
-      }
+      },
+      itemText: ''
     }
+  }
+
+  commentTextbox = event => {
+    this.setState({ itemText: event.target.value })
+    console.log(this.state.itemText)
+  }
+
+  addComment = event => {
+    event.preventDefault()
+    console.log(this.state.itemText)
+    const newComment = this.state.currentVideo.comments.concat({
+      name: 'Justin Chan',
+      comment: this.state.itemText,
+      id: this.state.currentVideo.comments.length,
+      timestamp: Math.floor(new Date())
+    })
+    this.setState(
+      Object.assign(this.state.currentVideo, {
+        comments: newComment,
+        itemText: ''
+      })
+    )
   }
 
   render() {
@@ -55,7 +78,12 @@ class Main extends React.Component {
             />
           </div>
         </main>
-        <MainContent currentVideo={this.state.currentVideo} />
+        <MainContent
+          currentVideo={this.state.currentVideo}
+          commentTextbox={this.commentTextbox}
+          addComment={this.addComment}
+          itemText={this.state.itemText}
+        />
       </div>
     )
   }

@@ -42,13 +42,19 @@ class CommentsSection extends React.Component {
                 id="name"
                 name="name"
                 placeholder="Type your comment here"
+                onChange={event => this.props.commentTextbox(event)}
+                value={this.props.itemText}
               />
             </form>
-            <button className="commentContent__button" id="commentContent__addButton" type="submit">
+            <button
+              className="commentContent__button"
+              id="commentContent__addButton"
+              type="submit"
+              onClick={event => this.props.addComment(event)}
+            >
               COMMENT
             </button>
           </div>
-
           <div id="commentJava">{commentList}</div>
         </div>
       </div>
