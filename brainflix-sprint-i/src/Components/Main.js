@@ -1,5 +1,6 @@
 import React from 'react'
 import MainContent from './MainContent'
+import TopButton from './TopButton'
 
 class Main extends React.Component {
   constructor() {
@@ -95,6 +96,7 @@ class Main extends React.Component {
           itemText={this.state.itemText}
           deleteComment={this.deleteComment}
         />
+        <TopButton />
       </div>
     )
   }
