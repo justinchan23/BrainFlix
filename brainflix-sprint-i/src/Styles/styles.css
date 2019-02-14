@@ -700,6 +700,12 @@ video {
   }
 }
 
+@media screen and (min-width: 681px) and (max-width: 730px) {
+  .commentContent__commentNew {
+    width: 380px;
+  }
+}
+
 @media screen and (max-width: 680px) {
   .commentContent__main {
     width: 288px;
