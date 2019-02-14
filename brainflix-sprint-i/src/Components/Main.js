@@ -52,18 +52,22 @@ class Main extends React.Component {
   addComment = () => {
     //event.preventDefault()
     //console.log(this.state.itemText)
-    const newComment = this.state.currentVideo.comments.concat({
-      name: 'Justin Chan',
-      comment: this.state.itemText,
-      id: this.state.currentVideo.comments.length,
-      timestamp: Math.floor(new Date())
-    })
-    this.setState(
-      Object.assign(this.state.currentVideo, {
-        comments: newComment,
-        itemText: ''
+    if (this.state.itemText.length < 2) {
+      alert('Please enter a valid comment')
+    } else {
+      const newComment = this.state.currentVideo.comments.concat({
+        name: 'Justin Chan',
+        comment: this.state.itemText,
+        id: this.state.currentVideo.comments.length,
+        timestamp: Math.floor(new Date())
       })
-    )
+      this.setState(
+        Object.assign(this.state.currentVideo, {
+          comments: newComment,
+          itemText: ''
+        })
+      )
+    }
   }
 
   render() {
