@@ -34,7 +34,7 @@
 
   .main__content {
     padding: 0px $tabletMargin;
-    justify-content: center;
+    justify-content: left;
   }
 
   /* ------- COMMENT SECTION ------ */
@@ -58,6 +58,12 @@
   justify-content: left;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+  .main__content {
+    justify-content: center;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1400px) {
   .main__videoImageFull {
     width: 700px;
@@ -72,9 +78,13 @@
   .main__contentMain {
     width: 720px;
   }
+
+  .commentJava__comment {
+    width: 624px;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1135px) {
+@media screen and (max-width: 1135px) {
   .asideSection__heading {
     margin: 0 0 40px 0;
   }
@@ -134,10 +144,6 @@
     &__button {
       margin-bottom: 32px;
     }
-
-    .main__videoFullDescription {
-      width: 100%;
-    }
   }
 
   #commentSubmit {
@@ -171,6 +177,10 @@
 
   .main__videoFullDescription {
     width: 100%;
+  }
+
+  .main__content {
+    justify-content: center;
   }
 }
 

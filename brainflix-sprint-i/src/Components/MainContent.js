@@ -36,39 +36,7 @@ class MainContent extends React.Component {
             <p>{this.props.currentVideo.description}</p>
           </div>
 
-          <div className="commentContent">
-            <div className="commentContent__main">
-              <h3 className="commentContent__commentNum">
-                {this.props.currentVideo.comments.length} Comments
-              </h3>
-              <div className="commentContent__section">
-                <img
-                  src={require('../Assets/Images/Mohan-muruge.jpg')}
-                  className="commentContent__pic"
-                  alt=""
-                />
-                <form id="commentSubmit">
-                  <label>JOIN THE CONVERSATION</label>
-                  <input
-                    className="commentContent__name commentContent__commentNew"
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Type your comment here"
-                  />
-                </form>
-                <button
-                  className="commentContent__button"
-                  id="commentContent__addButton"
-                  type="submit"
-                >
-                  COMMENT
-                </button>
-              </div>
-
-              <CommentsSection currentVideo={this.props.currentVideo} />
-            </div>
-          </div>
+          <CommentsSection currentVideo={this.props.currentVideo} />
         </div>
 
         <Aside />
