@@ -367,7 +367,7 @@ a:visited {
     margin-top: 12px;
     background-color: $black;
     @include colorWhite;
-    float: right;
+    //float: right;
   }
 
   &__like {
@@ -423,6 +423,7 @@ textarea:focus {
   &__section {
     border-bottom: 1px $mercury solid;
     padding: 24px 0;
+    width: 100%;
   }
 
   &__pic {

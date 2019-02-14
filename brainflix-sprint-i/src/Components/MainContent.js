@@ -1,5 +1,6 @@
 import React from 'react'
 import Aside from './Aside'
+import CommentsSection from './CommentsSection'
 
 class MainContent extends React.Component {
   render() {
@@ -65,59 +66,7 @@ class MainContent extends React.Component {
                 </button>
               </div>
 
-              <div id="commentJava">
-                <div class="commentJava__section">
-                  <img
-                    src={require('../Assets/Images/Mohan-muruge.jpg')}
-                    class="commentJava__pic"
-                    alt=""
-                  />
-                  <h4 class="commentJava__name">Michael Lyons</h4>
-                  <h5 class="commentJava__date">12/18/2018</h5>
-                  <p class="commentJava__comment">
-                    They BLEW the ROOF off at their last show, once everyone started figuring out
-                    they were going. This is still simply the greatest opening of a concert I have
-                    EVER witnessed.
-                  </p>
-                  <button class="commentContent__delete" id="commentContent__deleteButton">
-                    Delete
-                  </button>
-                </div>
-                <div class="commentJava__section">
-                  <img
-                    src={require('../Assets/Images/Mohan-muruge.jpg')}
-                    class="commentJava__pic"
-                    alt=""
-                  />
-                  <h4 class="commentJava__name">Michael Lyons</h4>
-                  <h5 class="commentJava__date">12/18/2018</h5>
-                  <p class="commentJava__comment">
-                    They BLEW the ROOF off at their last show, once everyone started figuring out
-                    they were going. This is still simply the greatest opening of a concert I have
-                    EVER witnessed.
-                  </p>
-                  <button class="commentContent__delete" id="commentContent__deleteButton">
-                    Delete
-                  </button>
-                </div>
-                <div class="commentJava__section">
-                  <img
-                    src={require('../Assets/Images/Mohan-muruge.jpg')}
-                    class="commentJava__pic"
-                    alt=""
-                  />
-                  <h4 class="commentJava__name">Michael Lyons</h4>
-                  <h5 class="commentJava__date">12/18/2018</h5>
-                  <p class="commentJava__comment">
-                    They BLEW the ROOF off at their last show, once everyone started figuring out
-                    they were going. This is still simply the greatest opening of a concert I have
-                    EVER witnessed.
-                  </p>
-                  <button class="commentContent__delete" id="commentContent__deleteButton">
-                    Delete
-                  </button>
-                </div>
-              </div>
+              <CommentsSection />
             </div>
           </div>
         </div>

@@ -361,7 +361,6 @@ a:visited {
   margin-top: 12px;
   background-color: #323232;
   color: #ffffff;
-  float: right;
 }
 
 .commentContent__like {
@@ -427,6 +426,7 @@ textarea:focus {
 .commentJava__section {
   border-bottom: 1px #e1e1e1 solid;
   padding: 24px 0;
+  width: 100%;
 }
 
 .commentJava__pic {
@@ -601,7 +601,7 @@ video {
     width: 712px;
   }
   .asideSection__heading {
-    margin: 40px 0 40px 0;
+    margin: 40px 0 40px 16px;
   }
 }
 
@@ -655,6 +655,9 @@ video {
 @media screen and (min-width: 768px) and (max-width: 1135px) {
   .asideSection__heading {
     margin: 0 0 40px 0;
+  }
+  .asideSection__div {
+    margin: 24px 0 0 0;
   }
 }
 

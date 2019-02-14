@@ -12,7 +12,7 @@
   }
 
   .asideSection__heading {
-    margin: 40px 0 40px 0;
+    margin: 40px 0 40px 16px;
   }
 }
 
@@ -77,6 +77,10 @@
 @media screen and (min-width: 768px) and (max-width: 1135px) {
   .asideSection__heading {
     margin: 0 0 40px 0;
+  }
+
+  .asideSection__div {
+    margin: 24px 0 0 0;
   }
 }
 
