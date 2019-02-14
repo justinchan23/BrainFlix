@@ -176,7 +176,7 @@ header nav ul {
   &__items {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    @include maxWidth;
     @include flex;
     list-style-type: none;
     margin: 0 $desktopMargin 0 $desktopMargin;
@@ -381,7 +381,7 @@ a:visited {
   }
 
   &__commentNum {
-    width: 100%;
+    @include maxWidth;
   }
 }
 
@@ -423,7 +423,7 @@ textarea:focus {
   &__section {
     border-bottom: 1px $mercury solid;
     padding: 24px 0;
-    width: 100%;
+    @include maxWidth;
   }
 
   &__pic {
@@ -529,7 +529,7 @@ textarea:focus {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    width: 100%;
+    @include maxWidth;
   }
 
   &__videoFullDescription {

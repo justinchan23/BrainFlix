@@ -71,10 +71,9 @@ class Main extends React.Component {
   }
 
   deleteComment = key => {
-    this.state.currentVideo.comments.splice(key, 1)
-    this.setState(
-      Object.assign(this.state.currentVideo, { comments: this.state.currentVideo.comments })
-    )
+    const commentArray = this.state.currentVideo.comments
+    delete commentArray[key]
+    this.setState(Object.assign(this.state.currentVideo, { comments: commentArray }))
   }
 
   render() {
