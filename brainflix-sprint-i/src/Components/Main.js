@@ -25,7 +25,7 @@ class Main extends React.Component {
           },
           {
             name: 'Ian',
-            comment: 'You could make $5000 a day too!',
+            comment: 'You could make $5000 a day too! I wish =P',
             id: 'a41f3802-8db7-45d4-95e4-142aeecd1aa4',
             timestamp: 1530744338878
           },
@@ -49,7 +49,7 @@ class Main extends React.Component {
             <video controls poster={this.state.currentVideo.image} class="main__videoImageFull" />
           </div>
         </main>
-        <MainContent currentVid={this.state.currentVideo} />
+        <MainContent currentVideo={this.state.currentVideo} />
       </div>
     )
   }
