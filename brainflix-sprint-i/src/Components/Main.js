@@ -25,7 +25,7 @@ class Main extends React.Component {
           },
           {
             name: 'Ian',
-            comment: 'You could make $5000 a day too! I wish =P',
+            comment: 'You could make $5000 a day too!',
             id: 'a41f3802-8db7-45d4-95e4-142aeecd1aa4',
             timestamp: 1530744338878
           },
