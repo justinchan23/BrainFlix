@@ -1,0 +1,40 @@
+Project: BrainFlix - Sprint I
+Project Overview
+You have been approached by a couple of entrepreneurs to build out a prototype for their new video streaming platform- BrainFlix. These entrepreneurs and their team need the prototype turned around quickly, as they have already lined up meetings with VC firms in three weeks time.
+
+BrainFlix’s creative director has provided you with a package and mockup of how they envision the final product. There is also a separate team that is currently working on the API needed to integrate with the front-end, but for the time being the static components need to be put together.
+
+In This Project You Will
+Leverage HTML, CSS, React and a design package (assets, style guide, spec sheet, and creative mockup) to create a functional and responsive site.
+Use the visual chunking exercise to help in developing the corresponding React components needed for this project.
+Please download the complete design package here.
+Use hardcoded data via state and props to simulate the live data seen in the mockups.
+The functionality should be limited to displaying data in the current sprint.
+Adding new videos or comments are not part of the current scope.
+Requirements
+Your project must follow the proper folder structure and naming convention outlined in the project guidelines
+The site must be responsive and therefore should closely resemble the mockups in the design package
+The site must make use of the provided video assets, along with all of the other assets
+The site must be comprised of multiple react components
+The site must use the <video> tag for the video player
+Although using the <video> tag, all visual elements of the video player must exist on the deliverable without functionality
+Use the poster attribute to have the video player resemble the mockup
+Hard-coded state must be used to generate videos and comments
+The ”Next Video” list must not contain the current video being displayed
+The project's CSS must use SASS variables
+The CSS must use BEM principles when naming classes
+The site should use Flexbox for layout control
+Tools
+Your deliverable must make use of the following tools:
+
+create-react-app
+npm
+SASS
+Live SASS Compiler
+See Requirement Level Key Words
+
+Diving Deeper
+Dynamic Timestamp
+To add a more refined feel to the site, let's update the timestamp in the comments section and video details to reflect when it was posted in a more human-readable format. Using YouTube as an example, a recently posted comment might display the time posted as "10 minutes ago" or "3 days ago". Apply this type of timestamp to your data without hardcoding the actual message. Please refer to the "Diving Deeper" design package for sprint 1 for an ideal visual implementation.
+
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will hinder your success in building upon previous work across sprints.

@@ -1,0 +1,65 @@
+Project: BrainFlix - Sprint II
+Project Overview
+Feedback has come in from the team at BrainFlix- the prototype looks good so far and is starting to take shape! The team is excited about your progress and have also made strides on their end. With the API specifications fully defined and a mock API created, the time has come to begin integrating it into your site and developing more functionality.
+
+In This Project You Will
+Leverage HTML, CSS, React and a design package (assets, style guide, spec sheet, and creative mockup) to create a functional and responsive site.
+
+Use the visual chunking exercise to help in developing the corresponding React components needed.
+Create a multi-page site through developing a connected second page.
+
+Extend the functionality of your site by connecting to an API and dynamically filling previously hardcoded content.
+
+Please download the complete design package here.
+
+Please use the following URL to access the API: https://project-2-api.herokuapp.com
+
+Please download the API documentation by clicking here.
+
+Requirements
+Your project must follow the proper folder structure and naming convention outlined in the project guidelines
+The site must be responsive and therefore should closely resemble the mockups in the design package
+The site must make use of the provided video assets, along with all of the other assets
+The site must be comprised of multiple react components
+The site must use multiple routes
+The project's CSS must use SASS variables
+The CSS must use BEM principles when naming classes
+The site should use Flexbox for layout control
+Functionality
+Add a link back to home when clicking the BrainFlix Logo
+The site must use react-router to do the following:
+Create two main routes
+One for the main video player
+One for the video upload page
+Given a valid URL, the site must load the video indicated in the URL
+i.e. {URL}/videos/fjgsld must load the video with id fjgsld
+Hint: You will need to use a component lifecycle method to complete this requirement
+Add functionality to the “Next Video” list. When a video from the list is clicked, have the following items update using react-router based on the video selected:
+All details for the main video content must update correctly pertaining to the video selected (likes, views, author, etc.)
+Connecting With an API
+Given the mock API, perform a request which dynamically fills the actual data on the page (using either Axios or fetch)
+The site must use the provided API to retrieve the video links and video details
+Hint: Use component lifecycle methods
+The site must use the comments provided with the video details response
+All data for videos and comments must come from the provided mock API
+Video Upload Page
+Given the provided mockup, create the user interface and corresponding components for the “Video Upload” page (without upload functionality), and have it link to the “upload” button located in the header of the page
+The "Video Upload" page user interface must be set up as a <Route> without functionality (this will be addressed in sprint 3)
+Tools
+Your deliverable must make use of the following tools:
+
+create-react-app
+react-router
+npm
+Postman
+Live SASS Compiler
+See Requirement Level Key Words
+
+Diving Deeper
+Posting Comments
+To add another layer of functionality to the site, let's add the ability to post comments. Please refer to the "Diving Deeper" design package for sprint 2 for an ideal visual implementation. Regarding the technical implementation, the following requirements must be met:
+
+When posting a comment, ensure that the page does not refresh
+You must POST a comment to the API
+If successful in posting the comment, render the new comment by sending a new request for the "Main Video" data
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will hinder your success in building upon previous work across sprints.

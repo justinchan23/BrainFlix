@@ -1,0 +1,56 @@
+Project: BrainFlix - Sprint III
+Project Overview
+Great work! So far everything is going as planned, however, the decision has been made to build out an actual API for the prototype and move away from using the mock API. The team at BrainFlix is confident in your ability to build out this new API, and have tasked you to develop it. Luckily, you do have the mock API to build against.
+
+In This Project You Will
+Leverage HTML, CSS, React and a design package (assets, style guide, spec sheet, and creative mockup) to create a functional and responsive site.
+Develop your own API and integrate it with your multi-page site to add a deeper level of functionality.
+Please download the complete design package here.
+Requirements
+Your project must follow the proper folder structure and naming convention outlined in the project guidelines
+Feedback from previous sprints should be implemented
+If you have questions about how to implement a piece of feedback, ask someone from the education team!
+The site must be responsive and therefore should closely resemble the mockups in the design package
+The site must make use of the provided video assets, along with all of the other assets
+The site must be comprised of multiple react components
+The site must use multiple routes
+All data for videos and comments must come from your API
+Given the same inputs your API must return the same values
+Video Player Functionality
+Given the provided creative mockups, add play and pause functionality for the video player.
+Express Server
+Using the mock API as a blueprint, create REST endpoints for /video
+
+The server must have the following endpoints:
+A GET endpoint at /videos that returns an array of videos
+A GET endpoint for the path /videos/:id that returns an object with the details of the video whose id matches :id. This detailed response must include the array of comments for the specified video
+A POST endpoint for the path /upload. This should add a new video to the video list on the page. Remember you will need to generate a unique id for this video.
+When a user submits a new video in the form it should be saved to the API via a POST request. From your front-end, you will need to provide the image path as part of this form submission. Ensure this is part of your “New Video” dataset.
+Video Upload Page
+Given the provided creative mockups, add the actual upload functionality to the "Video Upload" page. Specifically, this should include an event handler for the upload form so that when a user submits a new video, it POST’s the video to your API in order to save it to the list of videos.
+Tools
+Your deliverable must make use of the following tools:
+
+create-react-app
+react-router
+npm
+Postman
+Express
+SASS
+See Requirement Level Key Words
+
+Diving Deeper
+Custom Video Player
+Given the provided creative mockups, add full functionality to the video player, beyond the basic play/pause function. This includes details such as the blue scrubber bar, fullscreen, time tracking, and volume control
+
+Liking Videos
+Part 1: Implement a PUT endpoint at /videos/:videoId/likes that increments the like count of the video specified by video.
+
+Part 2: Building on the previous task, hook up an event handler to the like button (in the React front-end) to send a PUT request to hit your /videos/:videoId/likes endpoint.
+
+Please complete the Diving Deeper for Sprint II before proceeding to attempt the one listed below.
+
+Deleting Comments
+Implement a DELETE endpoint at videos/:videoId/comments/:commentId. It should delete a particular comment (specified by commentId) from a particular video (specified by videoId).
+
+Please note that Diving Deeper challenges should only be attempted if all project requirements are met. Attempting to do so without completing the project requirements will hinder your success in building upon previous work across sprints.
