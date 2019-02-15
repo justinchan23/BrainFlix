@@ -425,6 +425,22 @@ textarea:focus {
   background-color: #ffffff;
 }
 
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
 .commentJava__section {
   border-top: 1px #e1e1e1 solid;
   border-bottom: 1px #e1e1e1 solid;

@@ -418,6 +418,10 @@ textarea:focus {
   background-color: $white;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 .commentJava {
   &__section {
     border-top: 1px $mercury solid;
