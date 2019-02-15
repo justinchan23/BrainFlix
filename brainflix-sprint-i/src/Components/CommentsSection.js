@@ -7,11 +7,7 @@ class CommentsSection extends React.Component {
       var dateSince = dateCalculator(comment.timestamp)
       return (
         <div className="commentJava__section" key={i}>
-          <img
-            src={require('../Assets/Images/Mohan-muruge.jpg')}
-            className="commentJava__pic"
-            alt=""
-          />
+          <img src="./Assets/Images/Mohan-muruge.jpg" className="commentJava__pic" alt="" />
           <h4 className="commentJava__name">{comment.name}</h4>
           <h5 className="commentJava__date">{dateSince}</h5>
           <p className="commentJava__comment">{comment.comment}</p>
@@ -35,11 +31,7 @@ class CommentsSection extends React.Component {
             {this.props.currentVideo.comments.length} Comments
           </h3>
           <div className="commentContent__section">
-            <img
-              src={require('../Assets/Images/Mohan-muruge.jpg')}
-              className="commentContent__pic"
-              alt=""
-            />
+            <img src="./Assets/Images/Mohan-muruge.jpg" className="commentContent__pic" alt="" />
             <form id="commentSubmit" onSubmit={event => event.preventDefault()}>
               <label>JOIN THE CONVERSATION</label>
               <input

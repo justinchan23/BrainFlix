@@ -1,5 +1,5 @@
 import React from 'react'
-import videoList from './VideoList.json'
+import videoList from './Data/VideoList.json'
 
 class Aside extends React.Component {
   constructor() {

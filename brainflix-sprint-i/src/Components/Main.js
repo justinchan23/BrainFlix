@@ -1,7 +1,7 @@
 import React from 'react'
 import MainContent from './MainContent'
 import TopButton from './TopButton'
-import videoData from './CurrentVideo.json'
+import videoData from './Data/CurrentVideo.json'
 
 class Main extends React.Component {
   constructor() {
