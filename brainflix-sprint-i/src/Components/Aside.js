@@ -1,4 +1,5 @@
 import React from 'react'
+import Video from './Video'
 import videoList from './Data/VideoList.json'
 
 class Aside extends React.Component {
@@ -9,13 +10,14 @@ class Aside extends React.Component {
     }
   }
   render() {
-    const videoList = this.state.videos.map(video => {
+    const videoList = this.state.videos.map((video, i) => {
       return (
-        <div className="asideSection__div" key={video.id}>
-          <img src={video.image} className="asideSection__previewPic" alt="" />
-          <h3 className="asideSection__title">{video.title}</h3>
-          <h5 className="asideSection__name">{video.channel}</h5>
-        </div>
+        <Video
+          videoImage={video.image}
+          videoTitle={video.title}
+          videoChannel={video.channel}
+          key={i}
+        />
       )
     })
 

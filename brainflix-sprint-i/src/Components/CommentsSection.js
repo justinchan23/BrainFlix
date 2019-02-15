@@ -1,4 +1,5 @@
 import React from 'react'
+import Comment from './Comment'
 import dateCalculator from '../Scripts/dateCalculator'
 
 class CommentsSection extends React.Component {
@@ -6,21 +7,14 @@ class CommentsSection extends React.Component {
     var commentList = this.props.currentVideo.comments.map((comment, i) => {
       var dateSince = dateCalculator(comment.timestamp)
       return (
-        <div className="commentJava__section" key={i}>
-          <img src="./Assets/Images/Mohan-muruge.jpg" className="commentJava__pic" alt="" />
-          <h4 className="commentJava__name">{comment.name}</h4>
-          <h5 className="commentJava__date">{dateSince}</h5>
-          <p className="commentJava__comment">{comment.comment}</p>
-          <button
-            className="commentContent__delete"
-            id="commentContent__deleteButton"
-            onClick={() => {
-              this.props.deleteComment(i)
-            }}
-          >
-            Delete
-          </button>
-        </div>
+        <Comment
+          name={comment.name}
+          dateSince={dateSince}
+          comment={comment.comment}
+          index={i}
+          deleteComment={this.props.deleteComment}
+          key={i}
+        />
       )
     })
 
