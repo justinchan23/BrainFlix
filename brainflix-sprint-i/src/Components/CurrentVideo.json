@@ -5,7 +5,7 @@
   "channel": "Red Cow",
   "views": "1,001,023",
   "duration": "0:42",
-  "image": "../Assets/Images/video-list-0.jpg",
+  "image": "./Assets/Images/video-list-0.jpg",
   "video": "https://project-2-api.herokuapp.com/stream",
   "thumbsUp": 110.985,
   "comments": [

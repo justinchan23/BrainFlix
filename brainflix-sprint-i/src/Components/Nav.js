@@ -9,13 +9,7 @@ class Nav extends React.Component {
           <nav>
             <div className="nav__items">
               <div className="nav__item">
-                <a href="index.html">
-                  <img
-                    src={require('../Assets/Logo/Logo-brainflix.png')}
-                    className="nav__logo"
-                    alt=""
-                  />
-                </a>
+                <img src={'./Assets/Logo/Logo-brainflix.png'} className="nav__logo" alt="" />
               </div>
               <div className="nav__item">
                 <input
@@ -26,11 +20,7 @@ class Nav extends React.Component {
                   placeholder="Search"
                 />
                 <button className="nav__button nav__spacing">+ UPLOAD</button>
-                <img
-                  src={require('../Assets/Images/Mohan-muruge.jpg')}
-                  className="nav__profilePic"
-                  alt=""
-                />
+                <img src={'./Assets/Images/Mohan-muruge.jpg'} className="nav__profilePic" alt="" />
               </div>
             </div>
           </nav>
