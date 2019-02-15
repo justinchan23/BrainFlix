@@ -328,7 +328,6 @@ a:visited {
 
   &__section {
     margin-top: 8px;
-    border-bottom: 1px $mercury solid;
     display: flex;
     align-items: center;
   }
@@ -421,6 +420,7 @@ textarea:focus {
 
 .commentJava {
   &__section {
+    border-top: 1px $mercury solid;
     border-bottom: 1px $mercury solid;
     padding: 24px 0;
     @include maxWidth;

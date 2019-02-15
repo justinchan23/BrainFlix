@@ -321,7 +321,6 @@ a:visited {
 
 .commentContent__section {
   margin-top: 8px;
-  border-bottom: 1px #e1e1e1 solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,6 +426,7 @@ textarea:focus {
 }
 
 .commentJava__section {
+  border-top: 1px #e1e1e1 solid;
   border-bottom: 1px #e1e1e1 solid;
   padding: 24px 0;
   width: 100%;
