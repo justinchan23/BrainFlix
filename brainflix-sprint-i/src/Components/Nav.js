@@ -1,16 +1,20 @@
 import React from 'react'
-//import { Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 
 class Nav extends React.Component {
   render() {
     return (
-      <div>
-        <header>
-          <nav>
-            <div className="nav__items">
+      <header>
+        <nav>
+          <div className="nav__items">
+            <BrowserRouter>
               <div className="nav__item">
-                <img src={'./Assets/Logo/Logo-brainflix.png'} className="nav__logo" alt="" />
+                <Link to="/">
+                  <img src={'./Assets/Logo/Logo-brainflix.png'} className="nav__logo" alt="" />
+                </Link>
               </div>
+            </BrowserRouter>
+            <BrowserRouter>
               <div className="nav__item">
                 <input
                   className="nav__search nav__spacing"
@@ -19,13 +23,15 @@ class Nav extends React.Component {
                   name="search"
                   placeholder="Search"
                 />
-                <button className="nav__button nav__spacing">+ UPLOAD</button>
+                <Link to="/upload">
+                  <button className="nav__button nav__spacing">+ UPLOAD</button>
+                </Link>
                 <img src={'./Assets/Images/Mohan-muruge.jpg'} className="nav__profilePic" alt="" />
               </div>
-            </div>
-          </nav>
-        </header>
-      </div>
+            </BrowserRouter>
+          </div>
+        </nav>
+      </header>
     )
   }
 }
