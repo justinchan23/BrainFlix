@@ -1,9 +1,9 @@
 import React from 'react'
 import Nav from './Components/Nav'
 import Main from './Components/Main'
-import Upload from './Components/Upload'
+//import Upload from './Components/Upload'
 import './Styles/styles.css'
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
   render() {
@@ -13,8 +13,8 @@ class App extends React.Component {
           <div>
             <Nav />
             <Switch>
-              <Route exact path="/" component={withRouter(Main)} />
-              <Route exact path="/upload" component={withRouter(Upload)} />
+              <Route exact path="/" component={Main} />
+              <Route exact path="/upload" component={Main} />
             </Switch>
           </div>
         </BrowserRouter>

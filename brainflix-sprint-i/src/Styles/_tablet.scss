@@ -18,6 +18,22 @@
   .main__videoSlider {
     width: 751px;
   }
+
+  .main__contentMain {
+    border-right: 1px #e1e1e1 solid;
+  }
+
+  .main__videoButtonPadding {
+    padding-right: 6px;
+  }
+
+  .main__videoButton {
+    margin: 16px;
+  }
+
+  .main__buttonRight {
+    margin: 0 16px 16px 16px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -99,6 +115,18 @@
   .main__videoBar {
     width: 80%;
   }
+
+  .main__videoButtonPadding {
+    padding-right: 6px;
+  }
+
+  .main__videoButton {
+    margin: 16px;
+  }
+
+  .main__buttonRight {
+    margin: 0 16px 16px 16px;
+  }
 }
 
 @media screen and (max-width: 1135px) {
@@ -108,6 +136,16 @@
 
   .asideSection__div {
     margin: 24px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__videoButton {
+    margin: 16px 8px;
+  }
+
+  .main__buttonRight {
+    margin: 0 8px 16px 8px;
   }
 }
 
@@ -217,6 +255,10 @@
 
   .main__content {
     justify-content: center;
+  }
+
+  .main__videoButtonPadding {
+    padding-right: 12px;
   }
 }
 

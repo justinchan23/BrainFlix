@@ -239,7 +239,7 @@ a:visited {
     position: absolute;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   &__videoSlider {
@@ -273,7 +273,7 @@ a:visited {
     border-radius: 4px;
     display: flex;
     flex-direction: row;
-    margin: 0 16px 16px 16px;
+    //margin: 0 16px 16px 16px;
     height: 32px;
     width: auto;
   }
@@ -290,7 +290,7 @@ a:visited {
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 4px;
-    margin: 16px;
+    //margin: 16px;
     padding: 5px 14px;
   }
 
@@ -314,11 +314,25 @@ a:visited {
   &__uploadDiv {
     margin: 0 180px;
     width: 100%;
-    border-bottom: 1px $mercury solid;
   }
 
   &__uploadH1 {
     color: $black;
+  }
+
+  &__uploadPic {
+    height: 183px;
+    width: 344px;
+  }
+
+  &__uploadButton {
+    @include colorWhite;
+    border-radius: 4px;
+    background-color: $blue;
+    text-align: center;
+    border: 1px $blue solid;
+    width: 160px;
+    height: 48px;
   }
 }
 

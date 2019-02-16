@@ -61,7 +61,7 @@ class Main extends React.Component {
               <h6 className="main__videoTime">0:00 / 0:42</h6>
             </div>
             <div className="main__buttonRight">
-              <button className="main__videoButtonRight">
+              <button className="main__videoButtonRight main__videoButtonPadding">
                 <img
                   src="./Assets/Icons/SVG/Icon-fullscreen.svg"
                   alt=""
