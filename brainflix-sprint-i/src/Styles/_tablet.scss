@@ -14,6 +14,10 @@
   .asideSection__heading {
     margin: 40px 0 40px 16px;
   }
+
+  .main__videoSlider {
+    width: 751px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -87,6 +91,14 @@
   .commentJava__comment {
     width: 624px;
   }
+
+  .main__videoSlider {
+    width: 519px;
+  }
+
+  .main__videoBar {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 1135px) {
@@ -131,6 +143,14 @@
 
   .asideSection__heading {
     margin: 0 0 40px 0;
+  }
+
+  .main__videoTime {
+    display: none;
+  }
+
+  .main__videoSlider {
+    width: 65%;
   }
 }
 
