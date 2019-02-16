@@ -209,6 +209,113 @@ a:visited {
   width: 944px;
 }
 
+.main__videoControls {
+  height: 540px;
+  width: 944px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main__videoSlider {
+  width: 751px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 22px;
+  margin-bottom: 16px;
+  padding: 5px 0;
+}
+
+.main__videoBar {
+  width: 85%;
+  height: 2px;
+  border-radius: 4px;
+  margin: 10px;
+  background: #323232;
+}
+
+.main__videoTime {
+  color: #ffffff;
+  margin: 5px 0;
+}
+
+.main__buttonRight {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 16px 16px 16px;
+  height: 32px;
+  width: auto;
+}
+
+.main progress::-webkit-progress-value {
+  background-color: black;
+}
+
+.main progress::-webkit-progress-bar {
+  background-color: black;
+}
+
+.main__videoButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 4px;
+  margin: 16px;
+  padding: 5px 10px;
+}
+
+.main__videoButtonRight {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 5px 12px;
+}
+
+.main__videoScrubber {
+  margin: 0;
+  width: 751px;
+}
+
+.main__upload {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main__uploadDiv {
+  margin: 0 180px;
+  width: 100%;
+  border-bottom: 1px #e1e1e1 solid;
+}
+
+.main__uploadH1 {
+  color: #323232;
+}
+
 /* ------- TO TOP BUTTON ------ */
 #toTopButton {
   display: none;
@@ -668,10 +775,14 @@ video {
 
 @media screen and (min-width: 768px) and (max-width: 1400px) {
   .main__videoImageFull {
-    width: 700px;
     height: 400px;
+    width: 700px;
   }
   .main__videoImage {
+    height: 400px;
+    width: 700px;
+  }
+  .main__videoControls {
     height: 400px;
     width: 700px;
   }
@@ -705,10 +816,14 @@ video {
     margin: 0;
   }
   .main__videoImageFull {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .main__videoImage {
+    height: auto;
+    width: 100%;
+  }
+  .main__videoControls {
     height: auto;
     width: 100%;
   }
@@ -891,6 +1006,9 @@ video {
   .main__videoImage {
     width: 100%;
   }
+  .main__videoControls {
+    width: 100%;
+  }
   .main__descriptionHeader {
     padding: 32px 0 16px 0;
   }
@@ -991,6 +1109,10 @@ video {
     height: 183px;
   }
   .main__videoImage {
+    width: 100%;
+    height: 183px;
+  }
+  .main__videoControls {
     width: 100%;
     height: 183px;
   }

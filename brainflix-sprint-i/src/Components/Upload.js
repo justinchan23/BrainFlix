@@ -4,8 +4,10 @@ class Upload extends React.Component {
   render() {
     return (
       <div>
-        <main className="main">
-          <h1>Upload</h1>
+        <main className="main__upload">
+          <div className="main__uploadDiv">
+            <h1 className="main__uploadH1">Upload Video</h1>
+          </div>
         </main>
       </div>
     )

@@ -231,6 +231,94 @@ a:visited {
     height: 540px;
     width: 944px;
   }
+
+  &__videoControls {
+    height: 540px;
+    width: 944px;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__videoSlider {
+    width: 751px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    height: 22px;
+    margin-bottom: 16px;
+    padding: 5px 0;
+  }
+
+  &__videoBar {
+    width: 85%;
+    height: 2px;
+    border-radius: 4px;
+    margin: 10px;
+    background: $black;
+  }
+
+  &__videoTime {
+    color: $white;
+    margin: 5px 0;
+  }
+
+  &__buttonRight {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 16px 16px 16px;
+    height: 32px;
+    width: auto;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: black;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: black;
+  }
+
+  &__videoButton {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 4px;
+    margin: 16px;
+    padding: 5px 10px;
+  }
+
+  &__videoButtonRight {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 5px 12px;
+  }
+
+  &__videoScrubber {
+    margin: 0;
+    width: 751px;
+  }
+
+  &__upload {
+    background-color: $white;
+    @include flex;
+    @include flexAndWrap;
+  }
+
+  &__uploadDiv {
+    margin: 0 180px;
+    width: 100%;
+    border-bottom: 1px $mercury solid;
+  }
+
+  &__uploadH1 {
+    color: $black;
+  }
 }
 
 /* ------- TO TOP BUTTON ------ */

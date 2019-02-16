@@ -66,11 +66,16 @@
 
 @media screen and (min-width: 768px) and (max-width: 1400px) {
   .main__videoImageFull {
-    width: 700px;
     height: 400px;
+    width: 700px;
   }
 
   .main__videoImage {
+    height: 400px;
+    width: 700px;
+  }
+
+  .main__videoControls {
     height: 400px;
     width: 700px;
   }
@@ -110,11 +115,16 @@
   }
 
   .main__videoImageFull {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
 
   .main__videoImage {
+    height: auto;
+    width: 100%;
+  }
+
+  .main__videoControls {
     height: auto;
     width: 100%;
   }
