@@ -9,12 +9,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={withRouter(Main)} />
-            <Route exact path="/upload" component={withRouter(Upload)} />
-          </Switch>
+          <div>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={withRouter(Main)} />
+              <Route exact path="/upload" component={withRouter(Upload)} />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     )
