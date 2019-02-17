@@ -48,7 +48,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <main className="main">
+        <main className="main swirl-in-fwd">
           <div className="main__videoImage">
             <video poster={this.state.currentVideo.image} className="main__videoImageFull" />
           </div>

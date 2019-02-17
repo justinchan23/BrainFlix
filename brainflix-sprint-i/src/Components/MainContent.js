@@ -6,7 +6,7 @@ class MainContent extends React.Component {
   render() {
     const { title, channel, views, thumbsUp, description } = this.props.currentVideo
     return (
-      <content className="main__content">
+      <content className="main__content slide-in-blurred-bottom">
         <div className="main__contentMain">
           <div className="main__contentMainDiv">
             <h1 className="main__descriptionHeader">{title}</h1>
