@@ -644,7 +644,7 @@ textarea:focus::placeholder {
 }
 
 .main__descriptionHeader {
-  padding: 48px 0 24px 0;
+  padding: 48px 0 16px 0;
 }
 
 .main__descriptionIcon {
@@ -1168,7 +1168,7 @@ video {
     padding: 0;
   }
   h3 {
-    padding: 8px 0;
+    padding: 32px 0 8px 0;
   }
   p {
     font-size: 13px;
