@@ -503,6 +503,7 @@ textarea {
   margin-bottom: 24px;
   border: 1px #e1e1e1 solid;
   border-radius: 4px;
+  resize: none;
 }
 
 ::-webkit-input-placeholder {
