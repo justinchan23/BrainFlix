@@ -640,6 +640,7 @@ input:focus::placeholder {
     height: 70px;
     float: left;
     margin-right: 12px;
+    border-radius: 4px;
   }
 
   &__title {
@@ -655,6 +656,7 @@ input:focus::placeholder {
 
   &__heading {
     margin: 40px 0 40px 16px;
+    color: $silver;
   }
 }
 

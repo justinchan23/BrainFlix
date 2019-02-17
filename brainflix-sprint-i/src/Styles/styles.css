@@ -683,6 +683,7 @@ input:focus::placeholder {
   height: 70px;
   float: left;
   margin-right: 12px;
+  border-radius: 4px;
 }
 
 .asideSection__title {
@@ -698,6 +699,7 @@ input:focus::placeholder {
 
 .asideSection__heading {
   margin: 40px 0 40px 16px;
+  color: #afafaf;
 }
 
 .main__descriptionNum {
