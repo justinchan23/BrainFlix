@@ -439,6 +439,7 @@ a:visited {
   @include flex;
   @include flexAndWrap;
   justify-content: center;
+  margin-bottom: 24px;
 }
 
 .main__contentMainDiv {
@@ -652,11 +653,19 @@ input:focus::placeholder {
   &__name {
     color: $black;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__heading {
     margin: 40px 0 40px 16px;
     color: $silver;
+  }
+
+  &__titleDiv {
+    height: 49px;
+    overflow: hidden;
   }
 }
 
