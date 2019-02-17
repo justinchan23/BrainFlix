@@ -28,7 +28,7 @@ class CommentsSection extends React.Component {
             <img src="./Assets/Images/Mohan-muruge.jpg" className="commentContent__pic" alt="" />
             <form id="commentSubmit" onSubmit={event => event.preventDefault()}>
               <label>JOIN THE CONVERSATION</label>
-              <input
+              <textarea
                 className="commentContent__name commentContent__commentNew"
                 type="text"
                 id="name"

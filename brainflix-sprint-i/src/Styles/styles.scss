@@ -492,9 +492,10 @@ a:visited {
   }
 
   &__name {
-    height: 46px;
+    //height: 46px;
     padding: 0 0 0 16px;
     background-color: $alablaster;
+    padding-top: 15px;
   }
 
   &__comment {
@@ -560,7 +561,8 @@ label {
   @include colorSilver;
 }
 
-input {
+input,
+textarea {
   margin-bottom: 24px;
   border: 1px $mercury solid;
   border-radius: 4px;
@@ -577,7 +579,8 @@ textarea:focus {
   background-color: $white;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
   color: transparent;
 }
 

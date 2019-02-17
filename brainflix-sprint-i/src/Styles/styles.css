@@ -509,9 +509,9 @@ a:visited {
 }
 
 .commentContent__name {
-  height: 46px;
   padding: 0 0 0 16px;
   background-color: #fafafa;
+  padding-top: 15px;
 }
 
 .commentContent__comment {
@@ -575,7 +575,8 @@ label {
   color: #afafaf;
 }
 
-input {
+input,
+textarea {
   margin-bottom: 24px;
   border: 1px #e1e1e1 solid;
   border-radius: 4px;
@@ -604,19 +605,23 @@ textarea:focus {
   background-color: #ffffff;
 }
 
-input:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-input:focus:-ms-input-placeholder {
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-input:focus::-ms-input-placeholder {
+input:focus::-ms-input-placeholder,
+textarea:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
   color: transparent;
 }
 
