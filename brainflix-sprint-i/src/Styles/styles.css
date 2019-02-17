@@ -635,7 +635,7 @@ textarea:focus::placeholder {
 }
 
 .asideSection__titleDiv {
-  height: 49px;
+  max-height: 49px;
   overflow: hidden;
 }
 

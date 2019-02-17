@@ -593,7 +593,7 @@ textarea:focus::placeholder {
   }
 
   &__titleDiv {
-    height: 49px;
+    max-height: 49px;
     overflow: hidden;
   }
 }
