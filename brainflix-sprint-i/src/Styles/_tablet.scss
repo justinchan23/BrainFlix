@@ -19,10 +19,6 @@
     width: 751px;
   }
 
-  .main__contentMain {
-    border-right: 1px #e1e1e1 solid;
-  }
-
   .main__videoButtonPadding {
     padding-right: 6px;
   }
@@ -76,6 +72,12 @@
 
 #commentJava {
   justify-content: left;
+}
+
+@media screen and (min-width: 1136px) {
+  .main__contentMain {
+    border-right: 1px #e1e1e1 solid;
+  }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1400px) {
