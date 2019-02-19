@@ -402,6 +402,7 @@ a:visited {
 
 .main__cancelButton {
   margin-right: 48px;
+  color: #0095ff;
 }
 
 /* ------- MAIN CONTENT ------ */
@@ -600,7 +601,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px #323232 solid;
+  border: 2px #0095ff solid;
   background-color: #ffffff;
 }
 
@@ -1376,6 +1377,9 @@ video {
   }
   .main__cancelButton {
     margin: 24px 0 0 0;
+  }
+  .main__uploadButton {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

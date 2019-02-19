@@ -7,7 +7,6 @@ class Upload extends React.Component {
         <main className="main__upload">
           <div className="main__uploadDiv">
             <h1 className="main__uploadH1">Upload Video</h1>
-
             <div className="main__uploadDivContainer">
               <div className="main__uploadThumb">
                 <label>VIDEO THUMBNAIL</label>
@@ -34,7 +33,6 @@ class Upload extends React.Component {
                 </form>
               </div>
             </div>
-
             <div className="main__uploadButtons">
               <button className="main__cancelButton">CANCEL</button>
               <button className="main__uploadButton">PUBLISH</button>

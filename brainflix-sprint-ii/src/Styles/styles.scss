@@ -312,11 +312,6 @@ a:visited {
     justify-content: center;
   }
 
-  // &__uploadDiv {
-  //   margin: 0 180px;
-  //   width: 100%;
-  // }
-
   &__uploadH1 {
     color: $black;
   }
@@ -386,6 +381,7 @@ a:visited {
 
   &__cancelButton {
     margin-right: 48px;
+    color: $blue;
   }
 }
 
@@ -554,7 +550,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px $black solid;
+  border: 2px $blue solid;
   background-color: $white;
 }
 
