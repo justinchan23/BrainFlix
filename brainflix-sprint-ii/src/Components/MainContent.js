@@ -44,7 +44,7 @@ class MainContent extends React.Component {
             deleteComment={this.props.deleteComment}
           />
         </div>
-        <Aside videoList={this.props.videoList} />
+        <Aside videoList={this.props.videoList} currentVideo={this.props.currentVideo} />
       </content>
     )
   }

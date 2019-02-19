@@ -12,6 +12,7 @@ class Aside extends React.Component {
           videoChannel={video.channel}
           videoId={video.id}
           key={i}
+          currentVideo={this.props.currentVideo}
         />
       )
     })
