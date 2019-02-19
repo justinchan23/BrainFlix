@@ -35,7 +35,20 @@ class Main extends React.Component {
         })
         .catch(error => console.log(error))
     })
-    console.log(this.props.match.params.id)
+    // console.log(this.props.match.params.id)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      axios
+        .get(this.state.apiURL + this.props.match.params.id + this.state.apiKEY)
+        .then(response => {
+          //console.log(response)
+          // this.setState({ currentVideo: response.data })
+          this.setState(Object.assign(this.state, { currentVideo: response.data }))
+        })
+        .catch(error => console.log(error))
+    }
   }
 
   commentTextbox = event => {
