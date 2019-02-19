@@ -30,6 +30,10 @@
   .main__buttonRight {
     margin: 0 16px 16px 16px;
   }
+
+  .main__uploadDiv {
+    width: 1080px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -208,6 +212,11 @@
   .main__buttonRight {
     margin: 0 16px 16px 16px;
   }
+
+  .main__uploadDiv {
+    width: 100%;
+    margin: 0 24px;
+  }
 }
 
 @media screen and (max-width: 1135px) {
@@ -218,7 +227,23 @@
   .asideSection__div {
     margin: 24px 0 0 0;
   }
+
+  .main__uploadFormDiv {
+    width: 100%;
+  }
 }
+
+@media screen and (max-width: 1055px) {
+  .main__uploadFormDiv {
+    margin-top: 40px;
+  }
+}
+
+// @media screen and (min-width: 769px) {
+//   .main__uploadFormDiv {
+//     width: 66%;
+//   }
+// }
 
 @media screen and (max-width: 768px) {
   .main__videoButton {
@@ -270,6 +295,29 @@
 
   .main__videoSlider {
     width: 65%;
+  }
+
+  .main__uploadDiv {
+    width: 100%;
+    margin: 0 16px;
+  }
+
+  .main__uploadFormDiv {
+    margin-top: 40px;
+  }
+
+  .main__uploadPic {
+    width: 288px;
+    height: 153px;
+  }
+
+  .main__uploadFormDiv {
+    width: 100%;
+  }
+
+  .main__uploadVidTitle,
+  .main__uploadVidDescription {
+    width: 92%;
   }
 }
 

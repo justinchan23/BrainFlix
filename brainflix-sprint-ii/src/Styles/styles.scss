@@ -309,12 +309,13 @@ a:visited {
     background-color: $white;
     @include flex;
     @include flexAndWrap;
+    justify-content: center;
   }
 
-  &__uploadDiv {
-    margin: 0 180px;
-    width: 100%;
-  }
+  // &__uploadDiv {
+  //   margin: 0 180px;
+  //   width: 100%;
+  // }
 
   &__uploadH1 {
     color: $black;

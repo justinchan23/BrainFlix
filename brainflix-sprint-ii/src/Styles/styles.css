@@ -303,11 +303,9 @@ a:visited {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.main__uploadDiv {
-  margin: 0 180px;
-  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main__uploadH1 {
@@ -829,6 +827,9 @@ video {
   .main__buttonRight {
     margin: 0 16px 16px 16px;
   }
+  .main__uploadDiv {
+    width: 1080px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -988,6 +989,10 @@ video {
   .main__buttonRight {
     margin: 0 16px 16px 16px;
   }
+  .main__uploadDiv {
+    width: 100%;
+    margin: 0 24px;
+  }
 }
 
 @media screen and (max-width: 1135px) {
@@ -996,6 +1001,15 @@ video {
   }
   .asideSection__div {
     margin: 24px 0 0 0;
+  }
+  .main__uploadFormDiv {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  .main__uploadFormDiv {
+    margin-top: 40px;
   }
 }
 
@@ -1040,6 +1054,24 @@ video {
   }
   .main__videoSlider {
     width: 65%;
+  }
+  .main__uploadDiv {
+    width: 100%;
+    margin: 0 16px;
+  }
+  .main__uploadFormDiv {
+    margin-top: 40px;
+  }
+  .main__uploadPic {
+    width: 288px;
+    height: 153px;
+  }
+  .main__uploadFormDiv {
+    width: 100%;
+  }
+  .main__uploadVidTitle,
+  .main__uploadVidDescription {
+    width: 92%;
   }
 }
 
