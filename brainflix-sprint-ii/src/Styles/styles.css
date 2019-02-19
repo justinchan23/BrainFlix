@@ -1365,5 +1365,17 @@ video {
     width: 100%;
     height: 183px;
   }
+  .main__uploadButtons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__cancelButton {
+    margin: 24px 0 0 0;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

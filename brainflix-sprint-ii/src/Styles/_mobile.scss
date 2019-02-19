@@ -219,4 +219,13 @@
     width: 100%;
     height: 183px;
   }
+
+  .main__uploadButtons {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .main__cancelButton {
+    margin: 24px 0 0 0;
+  }
 }
