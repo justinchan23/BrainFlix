@@ -1,7 +1,6 @@
 import React from 'react'
 import MainContent from './MainContent'
 import TopButton from './TopButton'
-// import videoData from './Data/CurrentVideo.json'
 import MainVideo from './MainVideo'
 import axios from 'axios'
 
@@ -9,33 +8,34 @@ class Main extends React.Component {
   constructor() {
     super()
     this.state = {
+      apiURL: 'https://project-2-api.herokuapp.com/videos/',
+      apiKEY: '?api_key=25cadaa5-9cad-4892-a867-f96564af9f04',
       currentVideo: null,
-      videos: [],
+      videoList: [],
+      mainVideoID: undefined,
       itemText: ''
     }
   }
 
   componentDidMount() {
-    axios
-      .get(
-        'https://project-2-api.herokuapp.com/videos?api_key=25cadaa5-9cad-4892-a867-f96564af9f04'
-      )
-      .then(response => {
-        this.setState({ videos: response.data })
-        let defaultVidID = response.data[0].id
-        axios
-          .get(
-            'https://project-2-api.herokuapp.com/videos/' +
-              defaultVidID +
-              '?api_key=25cadaa5-9cad-4892-a867-f96564af9f04'
-          )
-          .then(response => {
-            //console.log(response)
-            // this.setState({ currentVideo: response.data })
-            this.setState(Object.assign(this.state, { currentVideo: response.data }))
-          })
-          .catch(error => console.log(error))
-      })
+    axios.get(this.state.apiURL + this.state.apiKEY).then(response => {
+      this.setState({ videoList: response.data })
+      if (this.props.match.params.id) {
+        this.setState({ mainVideoID: this.props.match.params.id })
+      } else {
+        this.setState({ mainVideoID: response.data[0].id })
+      }
+      // let defaultVidID = response.data[0].id
+      axios
+        .get(this.state.apiURL + this.state.mainVideoID + this.state.apiKEY)
+        .then(response => {
+          //console.log(response)
+          // this.setState({ currentVideo: response.data })
+          this.setState(Object.assign(this.state, { currentVideo: response.data }))
+        })
+        .catch(error => console.log(error))
+    })
+    console.log(this.props.match.params.id)
   }
 
   commentTextbox = event => {
@@ -87,6 +87,7 @@ class Main extends React.Component {
             addComment={this.addComment}
             itemText={this.state.itemText}
             deleteComment={this.deleteComment}
+            videoList={this.state.videoList}
           />
         )}
         <TopButton />
