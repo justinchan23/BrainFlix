@@ -12,7 +12,7 @@ class Main extends React.Component {
       apiKEY: '?api_key=25cadaa5-9cad-4892-a867-f96564af9f04',
       currentVideo: null,
       videoList: [],
-      mainVideoID: undefined,
+      defaultVideoID: undefined,
       itemText: ''
     }
   }
@@ -21,13 +21,13 @@ class Main extends React.Component {
     axios.get(this.state.apiURL + this.state.apiKEY).then(response => {
       this.setState({ videoList: response.data })
       if (this.props.match.params.id) {
-        this.setState({ mainVideoID: this.props.match.params.id })
+        this.setState({ defaultVideoID: this.props.match.params.id })
       } else {
-        this.setState({ mainVideoID: response.data[0].id })
+        this.setState({ defaultVideoID: response.data[0].id })
       }
       // let defaultVidID = response.data[0].id
       axios
-        .get(this.state.apiURL + this.state.mainVideoID + this.state.apiKEY)
+        .get(this.state.apiURL + this.state.defaultVideoID + this.state.apiKEY)
         .then(response => {
           //console.log(response)
           // this.setState({ currentVideo: response.data })
@@ -39,9 +39,13 @@ class Main extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    var url = this.state.apiURL + this.props.match.params.id + this.state.apiKEY
     if (this.props.match.params.id !== prevProps.match.params.id) {
+      if (this.props.match.params.id === undefined) {
+        url = this.state.apiURL + this.state.defaultVideoID + this.state.apiKEY
+      }
       axios
-        .get(this.state.apiURL + this.props.match.params.id + this.state.apiKEY)
+        .get(url)
         .then(response => {
           //console.log(response)
           // this.setState({ currentVideo: response.data })
@@ -59,21 +63,31 @@ class Main extends React.Component {
   addComment = () => {
     //event.preventDefault()
     //console.log(this.state.itemText)
+    // assign form data into var
+    var data = {
+      name: 'Justin',
+      comment: this.state.itemText
+    }
+
+    // header for posting to the api
+    var header = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    //post the comment to the api
     if (this.state.itemText.length < 2) {
       alert('Please enter a valid comment')
     } else {
-      const newComment = this.state.currentVideo.comments.concat({
-        name: 'Justin Chan',
-        comment: this.state.itemText,
-        id: this.state.currentVideo.comments.length,
-        timestamp: Math.floor(new Date())
-      })
-      this.setState(
-        Object.assign(this.state.currentVideo, {
-          comments: newComment,
-          itemText: ''
-        })
-      )
+      axios
+        .post(
+          this.state.apiURL + this.state.currentVideo.id + '/comment' + this.state.apiKEY,
+          data,
+          header
+        )
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
     }
   }
 

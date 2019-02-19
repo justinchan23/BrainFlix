@@ -1,6 +1,9 @@
 import React from 'react'
 
 class Upload extends React.Component {
+  upload = event => {
+    event.preventDefault()
+  }
   render() {
     return (
       <div>
@@ -17,7 +20,7 @@ class Upload extends React.Component {
                 />
               </div>
               <div className="main__uploadFormDiv">
-                <form className="main__uploadForm">
+                <form className="main__uploadForm" onSubmit={this.upload}>
                   <label>TITLE YOUR VIDEO</label>
                   <input
                     type="text"
