@@ -5,8 +5,8 @@ import dateCalculator from '../Scripts/dateCalculator'
 
 class CommentsSection extends React.Component {
   render() {
-    // if (this.props.currentVideo.comments > 0) {
-    var commentList = this.props.currentVideo.comments.map((comment, i) => {
+    const { currentVideo, commentTextbox, itemText, addComment, deleteComment } = this.props
+    var commentList = currentVideo.comments.map((comment, i) => {
       var dateSince = dateCalculator(comment.timestamp)
       return (
         <Comment
@@ -14,21 +14,15 @@ class CommentsSection extends React.Component {
           dateSince={dateSince}
           comment={comment.comment}
           id={comment.id}
-          deleteComment={this.props.deleteComment}
+          deleteComment={deleteComment}
           key={i}
         />
       )
     })
-    // } else {
-    //   return 'Loading'
-    // }
-
     return (
       <div className="commentContent">
         <div className="commentContent__main">
-          <h3 className="commentContent__commentNum">
-            {this.props.currentVideo.comments.length} Comments
-          </h3>
+          <h3 className="commentContent__commentNum">{currentVideo.comments.length} Comments</h3>
           <div className="commentContent__section">
             <img src="./Assets/Images/Mohan-muruge.jpg" className="commentContent__pic" alt="" />
             <form id="commentSubmit" onSubmit={event => event.preventDefault()}>
@@ -39,20 +33,20 @@ class CommentsSection extends React.Component {
                 id="name"
                 name="name"
                 placeholder="Type your comment here"
-                onChange={this.props.commentTextbox}
-                value={this.props.itemText}
+                onChange={commentTextbox}
+                value={itemText}
               />
             </form>
             <button
               className="commentContent__button"
               id="commentContent__addButton"
               type="submit"
-              onClick={this.props.addComment}
+              onClick={addComment}
             >
               COMMENT
             </button>
           </div>
-          <div id="commentJava">{commentList.reverse()}</div>
+          <div id="commentJava">{commentList}</div>
         </div>
       </div>
     )

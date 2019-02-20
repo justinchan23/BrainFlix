@@ -5,6 +5,14 @@ import CommentsSection from './CommentsSection'
 class MainContent extends React.Component {
   render() {
     const { title, channel, views, likes, description } = this.props.currentVideo
+    const {
+      currentVideo,
+      commentTextbox,
+      addComment,
+      itemText,
+      deleteComment,
+      videoList
+    } = this.props
     return (
       <content className="main__content">
         <div className="main__contentMain">
@@ -37,25 +45,17 @@ class MainContent extends React.Component {
             <p>{description}</p>
           </div>
           <CommentsSection
-            currentVideo={this.props.currentVideo}
-            commentTextbox={this.props.commentTextbox}
-            addComment={this.props.addComment}
-            itemText={this.props.itemText}
-            deleteComment={this.props.deleteComment}
+            currentVideo={currentVideo}
+            commentTextbox={commentTextbox}
+            addComment={addComment}
+            itemText={itemText}
+            deleteComment={deleteComment}
           />
         </div>
-        <Aside videoList={this.props.videoList} currentVideo={this.props.currentVideo} />
+        <Aside videoList={videoList} currentVideo={currentVideo} />
       </content>
     )
   }
 }
 
 export default MainContent
-
-// <CommentsSection
-//             currentVideo={this.props.currentVideo}
-//             commentTextbox={this.props.commentTextbox}
-//             addComment={this.props.addComment}
-//             itemText={this.props.itemText}
-//             deleteComment={this.props.deleteComment}
-//           />

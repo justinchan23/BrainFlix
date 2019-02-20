@@ -2,10 +2,11 @@ import React from 'react'
 
 class MainVideo extends React.Component {
   render() {
+    const { poster, duration } = this.props
     return (
       <main className="main">
         <div className="main__videoImage">
-          <video poster={this.props.poster} className="main__videoImageFull" />
+          <video poster={poster} className="main__videoImageFull" />
         </div>
         <div className="main__videoControls">
           <button className="main__videoButton">
@@ -13,7 +14,7 @@ class MainVideo extends React.Component {
           </button>
           <div className="main__videoSlider">
             <progress className="main__videoBar" value="0" min="0" max="100" />
-            <h6 className="main__videoTime">0:00 / {this.props.duration}</h6>
+            <h6 className="main__videoTime">0:00 / {duration}</h6>
           </div>
           <div className="main__buttonRight">
             <button className="main__videoButtonRight main__videoButtonPadding">
