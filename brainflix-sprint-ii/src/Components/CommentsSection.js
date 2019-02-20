@@ -13,7 +13,7 @@ class CommentsSection extends React.Component {
           name={comment.name}
           dateSince={dateSince}
           comment={comment.comment}
-          index={i}
+          id={comment.id}
           deleteComment={this.props.deleteComment}
           key={i}
         />

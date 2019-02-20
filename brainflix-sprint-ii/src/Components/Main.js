@@ -91,11 +91,13 @@ class Main extends React.Component {
     }
   }
 
-  deleteComment = key => {
-    const commentArray = this.state.currentVideo.comments.slice(0)
-    commentArray.splice(key, 1)
-    //delete commentArray[key]
-    this.setState(Object.assign(this.state.currentVideo, { comments: commentArray }))
+  deleteComment = id => {
+    axios
+      .delete(
+        this.state.apiURL + this.state.currentVideo.id + '/comments/' + id + this.state.apiKEY
+      )
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
   }
 
   render() {

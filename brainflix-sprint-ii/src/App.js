@@ -14,8 +14,8 @@ class App extends React.Component {
             <Nav />
             <Switch>
               <Route exact path="/" component={Main} />
-              <Route exact path="/upload" component={Upload} />
-              <Route exact path="/:id" component={Main} />
+              <Route path="/upload" component={Upload} />
+              <Route path="/:id" component={Main} />
             </Switch>
           </div>
         </BrowserRouter>

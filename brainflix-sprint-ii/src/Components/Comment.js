@@ -2,7 +2,7 @@ import React from 'react'
 
 class Comment extends React.Component {
   render() {
-    const { name, dateSince, comment, index, deleteComment } = this.props
+    const { name, dateSince, comment, id, deleteComment } = this.props
     return (
       <div className="commentJava__section">
         <img src="./Assets/Images/Mohan-muruge.jpg" className="commentJava__pic" alt="" />
@@ -13,7 +13,7 @@ class Comment extends React.Component {
           className="commentContent__delete"
           id="commentContent__deleteButton"
           onClick={() => {
-            deleteComment(index)
+            deleteComment(id)
           }}
         >
           Delete
