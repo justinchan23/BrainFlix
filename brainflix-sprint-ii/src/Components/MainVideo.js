@@ -30,6 +30,17 @@ class MainVideo extends React.Component {
     }
   }
 
+  videoEnded = () => {
+    this.setState({ videoPlay: false, playPauseButton: './Assets/Icons/SVG/Icon-play.svg' })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.poster !== prevProps.poster) {
+      this.setState({ videoPlay: false, playPauseButton: './Assets/Icons/SVG/Icon-play.svg' })
+      this.refs.video.load()
+    }
+  }
+
   render() {
     const { poster, duration, src } = this.props
     return (
@@ -40,9 +51,7 @@ class MainVideo extends React.Component {
             src={src}
             ref="video"
             className="main__videoImageFull"
-            // onEnded={() => {
-            //   this.refs.video.load()
-            // }}
+            onEnded={this.videoEnded}
           />
         </div>
         <div className="main__videoControls">
