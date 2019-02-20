@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 class Video extends React.Component {
   render() {
-    const { videoImage, videoTitle, videoChannel, videoId } = this.props
+    const { videoImage, videoTitle, videoChannel, videoId, currentVideo } = this.props
     var divId = ''
-    if (videoId === this.props.currentVideo.id) {
+    if (videoId === currentVideo.id) {
       divId = 'currentVideo'
     }
     return (
