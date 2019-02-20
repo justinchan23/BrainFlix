@@ -50,6 +50,8 @@ class Main extends React.Component {
         })
         .catch(error => console.log(error))
     }
+    // go to top of page when clicking a video link
+    window.scrollTo(0, 0)
   }
 
   commentTextbox = event => {
@@ -65,14 +67,12 @@ class Main extends React.Component {
       name: 'Justin',
       comment: this.state.itemText
     }
-
     // header for posting to the api
     var header = {
       headers: {
         'Content-Type': 'application/json'
       }
     }
-
     //post the comment to the api
     if (this.state.itemText.length < 2) {
       alert('Please enter a valid comment')
