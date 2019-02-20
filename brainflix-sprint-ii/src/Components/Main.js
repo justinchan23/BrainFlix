@@ -79,11 +79,18 @@ class Main extends React.Component {
     } else {
       axios
         .post(
-          this.state.apiURL + this.state.currentVideo.id + '/comment' + this.state.apiKEY,
+          this.state.apiURL + this.state.currentVideo.id + '/comments' + this.state.apiKEY,
           data,
           header
         )
-        .then(response => console.log(response))
+        .then(() => {
+          axios
+            .get(this.state.apiURL + this.state.currentVideo.id + this.state.apiKEY)
+            .then(response => {
+              this.setState(Object.assign(this.state, { currentVideo: response.data }))
+            })
+            .catch(error => console.log(error))
+        })
         .catch(error => console.log(error))
     }
   }
