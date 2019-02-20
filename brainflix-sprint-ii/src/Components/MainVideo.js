@@ -6,6 +6,7 @@ class MainVideo extends React.Component {
     this.state = {
       videoPlay: false,
       playPauseButton: './Assets/Icons/SVG/Icon-play.svg',
+      volumeButton: './Assets/Icons/SVG/Icon-volume.svg',
       videoMute: false
     }
   }
@@ -76,7 +77,7 @@ class MainVideo extends React.Component {
               />
             </button>
             <button className="main__videoButtonRight" onClick={this.videoMute}>
-              <img src="./Assets/Icons/SVG/Icon-volume.svg" alt="" className="main__videoVolume" />
+              <img src={this.state.volumeButton} alt="" className="main__videoVolume" />
             </button>
           </div>
         </div>
