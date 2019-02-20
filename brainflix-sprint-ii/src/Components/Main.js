@@ -51,7 +51,7 @@ class Main extends React.Component {
         .catch(error => console.log(error))
     }
     // go to top of page when clicking a video link
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }
 
   commentTextbox = event => {
@@ -111,6 +111,7 @@ class Main extends React.Component {
           <MainVideo
             poster={this.state.currentVideo.image}
             duration={this.state.currentVideo.duration}
+            src={this.state.currentVideo.video + this.state.apiKEY}
           />
         )}
         {this.state.currentVideo && (

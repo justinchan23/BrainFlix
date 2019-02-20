@@ -403,6 +403,8 @@ a:visited {
 .main__cancelButton {
   margin-right: 48px;
   color: #0095ff;
+  border: none;
+  background: none;
 }
 
 /* ------- MAIN CONTENT ------ */
