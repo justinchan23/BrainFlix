@@ -46,7 +46,7 @@ class CommentsSection extends React.Component {
               COMMENT
             </button>
           </div>
-          <div id="commentJava">{commentList}</div>
+          <div id="commentJava">{commentList.reverse()}</div>
         </div>
       </div>
     )

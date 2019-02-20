@@ -45,7 +45,6 @@ class Main extends React.Component {
         .get(url)
         .then(response => {
           //console.log(response)
-          // this.setState({ currentVideo: response.data })
           this.setState(Object.assign(this.state, { currentVideo: response.data }))
         })
         .catch(error => console.log(error))
@@ -61,19 +60,17 @@ class Main extends React.Component {
 
   addComment = () => {
     //event.preventDefault()
-    //console.log(this.state.itemText)
-    // assign form data into var
     var data = {
       name: 'Justin',
       comment: this.state.itemText
     }
-    // header for posting to the api
+
     var header = {
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    //post the comment to the api
+
     if (this.state.itemText.length < 2) {
       alert('Please enter a valid comment')
     } else {
@@ -84,6 +81,7 @@ class Main extends React.Component {
           header
         )
         .then(() => {
+          this.setState({ itemText: '' })
           axios
             .get(this.state.apiURL + this.state.currentVideo.id + this.state.apiKEY)
             .then(response => {
