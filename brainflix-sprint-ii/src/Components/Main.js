@@ -1,73 +1,72 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MainContent from './MainContent'
 import TopButton from './TopButton'
 import MainVideo from './MainVideo'
 import axios from 'axios'
 
-class Main extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      apiURL: 'https://project-2-api.herokuapp.com/videos/',
-      apiKEY: '?api_key=25cadaa5-9cad-4892-a867-f96564af9f04',
-      currentVideo: null,
-      videoList: [],
-      defaultVideoID: undefined,
-      itemText: ''
+const Main = props => {
+  const apiURL = 'https://project-2-api.herokuapp.com/videos/'
+  const apiKEY = '?api_key=25cadaa5-9cad-4892-a867-f96564af9f05'
+  const [currentVideo, setCurrentVideo] = useState(null)
+  const [itemText, setItemText] = useState('')
+  const [videosList, setVideosList] = useState([])
+  const [defaultVidID, setDefaultVidID] = useState('')
+  const [pageLoaded, setPageLoaded] = useState(false)
+  var firstVideoID = ''
+  var videoIDs = []
+
+  const getData = () => {
+    axios
+      .get(apiURL + apiKEY)
+      .then(response => {
+        setVideosList(response.data)
+        // firstVideoID = response.data[0].id
+        setDefaultVidID((firstVideoID = response.data[0].id))
+        videoIDs = response.data.map(video => video.id)
+      })
+      .then(() => {
+        getVideo()
+      })
+      .then(() => {
+        setPageLoaded(true)
+      })
+      .catch(error => console.log(error))
+  }
+
+  const getVideo = () => {
+    if (props.match.params.id && videoIDs.indexOf(props.match.params.id) !== -1) {
+      getVideoDetails(props.match.params.id)
+    } else {
+      getVideoDetails(firstVideoID)
     }
   }
 
-  componentDidMount() {
-    const { apiURL, apiKEY } = this.state
-    const { params } = this.props.match
-    axios.get(apiURL + apiKEY).then(response => {
-      this.setState({ videoList: response.data })
-      var videoIDs = this.state.videoList.map(video => video.id)
-      if (params.id && videoIDs.indexOf(params.id) !== -1) {
-        this.setState({ defaultVideoID: params.id })
-      } else {
-        this.setState({ defaultVideoID: response.data[0].id })
-      }
-      axios
-        .get(apiURL + this.state.defaultVideoID + apiKEY)
-        .then(response => {
-          //console.log(response)
-          this.setState(Object.assign(this.state, { currentVideo: response.data }))
-        })
-        .catch(error => console.log(error))
-    })
+  const getVideoDetails = videoID => {
+    axios
+      .get(apiURL + videoID + apiKEY)
+      .then(response => {
+        setCurrentVideo(response.data)
+      })
+      .catch(error => console.log(error))
   }
 
-  componentDidUpdate(prevProps) {
-    const { apiURL, apiKEY, defaultVideoID } = this.state
-    const { params } = this.props.match
-    var url = apiURL + params.id + apiKEY
-    if (params.id !== prevProps.match.params.id) {
-      if (params.id === undefined) {
-        url = apiURL + defaultVideoID + apiKEY
-      }
-      axios
-        .get(url)
-        .then(response => {
-          //console.log(response)
-          this.setState(Object.assign(this.state, { currentVideo: response.data }))
-        })
-        .catch(error => console.log(error))
+  const changeData = newVideoID => {
+    if (newVideoID === undefined) {
+      getVideoDetails(defaultVidID)
+    } else {
+      getVideoDetails(newVideoID)
     }
-    // go to top of page when clicking a video link
-    // window.scrollTo(0, 0)
   }
 
-  commentTextbox = event => {
-    this.setState({ itemText: event.target.value })
-    //console.log(this.state.itemText)
+  const commentTextbox = event => {
+    setItemText(event.target.value)
+    // console.log(itemText)
   }
 
-  addComment = () => {
-    const { apiURL, apiKEY, currentVideo } = this.state
+  const addComment = () => {
     var data = {
       name: 'Justin',
-      comment: this.state.itemText
+      comment: itemText
     }
 
     var header = {
@@ -76,17 +75,17 @@ class Main extends React.Component {
       }
     }
 
-    if (this.state.itemText.length < 2) {
+    if (itemText.length < 2) {
       alert('Please enter a valid comment')
     } else {
       axios
         .post(apiURL + currentVideo.id + '/comments' + apiKEY, data, header)
         .then(() => {
-          this.setState({ itemText: '' })
+          setItemText('')
           axios
             .get(apiURL + currentVideo.id + apiKEY)
             .then(response => {
-              this.setState(Object.assign(this.state, { currentVideo: response.data }))
+              setCurrentVideo(response.data)
             })
             .catch(error => console.log(error))
         })
@@ -94,23 +93,28 @@ class Main extends React.Component {
     }
   }
 
-  deleteComment = id => {
-    const { apiURL, apiKEY, currentVideo } = this.state
+  const deleteComment = id => {
     axios
       .delete(apiURL + currentVideo.id + '/comments/' + id + apiKEY)
       .then(() => {
         axios
           .get(apiURL + currentVideo.id + apiKEY)
           .then(response => {
-            this.setState(Object.assign(this.state, { currentVideo: response.data }))
+            setCurrentVideo(response.data)
           })
           .catch(error => console.log(error))
       })
       .catch(error => console.log(error))
   }
 
-  render() {
-    const { currentVideo, apiKEY, itemText, videoList } = this.state
+  // componentdidmount/didupdate
+  useEffect(() => {
+    pageLoaded ? changeData(props.match.params.id) : getData()
+  }, [props.match.params.id])
+
+  if (pageLoaded === false) {
+    return <h1>Loading ...</h1>
+  } else {
     return (
       <div>
         {currentVideo && (
@@ -123,11 +127,11 @@ class Main extends React.Component {
         {currentVideo && (
           <MainContent
             currentVideo={currentVideo}
-            commentTextbox={this.commentTextbox}
-            addComment={this.addComment}
+            commentTextbox={commentTextbox}
+            addComment={addComment}
             itemText={itemText}
-            deleteComment={this.deleteComment}
-            videoList={videoList}
+            deleteComment={deleteComment}
+            videoList={videosList}
           />
         )}
         <TopButton />

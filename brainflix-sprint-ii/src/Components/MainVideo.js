@@ -1,89 +1,90 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
-class MainVideo extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      videoPlay: false,
-      playPauseButton: './Assets/Icons/SVG/Icon-play.svg',
-      volumeButton: './Assets/Icons/SVG/Icon-volume.svg',
-      videoMute: false
-    }
+const MainVideo = props => {
+  const [videoPlay, setVideoPlay] = useState(false)
+  const [playPauseButton, setPlayPauseButton] = useState('./Assets/Icons/SVG/Icon-play.svg')
+  const [videoMute, setVideoMute] = useState(false)
+  const video = useRef()
+
+  const videoEnded = () => {
+    video.current.load()
+    setVideoPlay(false)
+    setPlayPauseButton('./Assets/Icons/SVG/Icon-play.svg')
   }
 
-  videoPlay = () => {
-    if (this.state.videoPlay === false) {
-      this.refs.video.play()
-      this.setState({ videoPlay: true, playPauseButton: './Assets/Icons/SVG/Icon-pause.svg' })
-    } else {
-      this.refs.video.pause()
-      this.setState({ videoPlay: false, playPauseButton: './Assets/Icons/SVG/Icon-play.svg' })
-    }
+  const playVideo = () => {
+    video.current.play()
+    setVideoPlay(true)
+    setPlayPauseButton('./Assets/Icons/SVG/Icon-pause.svg')
   }
 
-  videoMute = () => {
-    if (this.state.videoMute === false) {
-      this.setState({ videoMute: true })
-      this.refs.video.muted = this.state.videoMute
-    } else {
-      this.setState({ videoMute: false })
-      this.refs.video.muted = this.state.videoMute
-    }
+  const pauseVideo = () => {
+    video.current.pause()
+    setVideoPlay(false)
+    setPlayPauseButton('./Assets/Icons/SVG/Icon-play.svg')
   }
 
-  videoEnded = () => {
-    this.setState({ videoPlay: false, playPauseButton: './Assets/Icons/SVG/Icon-play.svg' })
+  const playOrPause = () => {
+    videoPlay ? pauseVideo() : playVideo()
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.poster !== prevProps.poster) {
-      this.setState({ videoPlay: false, playPauseButton: './Assets/Icons/SVG/Icon-play.svg' })
-      this.refs.video.load()
-    }
+  const mute = () => {
+    setVideoMute(videoMute ? false : true)
+    video.current.muted = videoMute
   }
 
-  render() {
-    const { poster, duration, src } = this.props
-    return (
-      <main className="main">
-        <div className="main__videoImage">
-          <video
-            poster={poster}
-            src={src}
-            ref="video"
-            className="main__videoImageFull"
-            onEnded={this.videoEnded}
-          />
+  const muteVideo = () => {
+    mute()
+  }
+
+  const requestFullscreen = () => {
+    video.current.requestFullscreen()
+  }
+
+  useEffect(() => {
+    videoEnded()
+  }, [props.poster])
+
+  const { poster, duration, src } = props
+  return (
+    <main className="main">
+      <div className="main__videoImage">
+        <video
+          poster={poster}
+          src={src}
+          ref={video}
+          className="main__videoImageFull"
+          onEnded={videoEnded}
+        />
+      </div>
+      <div className="main__videoControls">
+        <button className="main__videoButton" onClick={playOrPause}>
+          <img src={playPauseButton} alt="" />
+        </button>
+        <div className="main__videoSlider">
+          <progress className="main__videoBar" value="0" min="0" max="100" />
+          <h6 className="main__videoTime">0:00 / {duration}</h6>
         </div>
-        <div className="main__videoControls">
-          <button className="main__videoButton" onClick={this.videoPlay}>
-            <img src={this.state.playPauseButton} alt="" />
+        <div className="main__buttonRight">
+          <button
+            className="main__videoButtonRight main__videoButtonPadding"
+            onClick={() => {
+              requestFullscreen()
+            }}
+          >
+            <img
+              src="./Assets/Icons/SVG/Icon-fullscreen.svg"
+              alt=""
+              className="main__videoFullscreen"
+            />
           </button>
-          <div className="main__videoSlider">
-            <progress className="main__videoBar" value="0" min="0" max="100" />
-            <h6 className="main__videoTime">0:00 / {duration}</h6>
-          </div>
-          <div className="main__buttonRight">
-            <button
-              className="main__videoButtonRight main__videoButtonPadding"
-              onClick={() => {
-                this.refs.video.requestFullscreen()
-              }}
-            >
-              <img
-                src="./Assets/Icons/SVG/Icon-fullscreen.svg"
-                alt=""
-                className="main__videoFullscreen"
-              />
-            </button>
-            <button className="main__videoButtonRight" onClick={this.videoMute}>
-              <img src={this.state.volumeButton} alt="" className="main__videoVolume" />
-            </button>
-          </div>
+          <button className="main__videoButtonRight" onClick={muteVideo}>
+            <img src="./Assets/Icons/SVG/Icon-volume.svg" alt="" className="main__videoVolume" />
+          </button>
         </div>
-      </main>
-    )
-  }
+      </div>
+    </main>
+  )
 }
 
 export default MainVideo
