@@ -5,23 +5,21 @@ import Upload from './Components/Upload'
 import './Styles/styles.css'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <BrowserRouter>
-          <div>
-            <Nav />
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <Route path="/upload" component={Upload} />
-              <Route path="/:id" component={Main} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div>
+      <BrowserRouter>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/upload" component={Upload} />
+            <Route path="/:id" component={Main} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
