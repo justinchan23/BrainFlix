@@ -34,11 +34,9 @@ const Main = props => {
   }
 
   const getVideo = () => {
-    if (props.match.params.id && videoIDs.indexOf(props.match.params.id) !== -1) {
-      getVideoDetails(props.match.params.id)
-    } else {
-      getVideoDetails(firstVideoID)
-    }
+    props.match.params.id && videoIDs.indexOf(props.match.params.id) !== -1
+      ? getVideoDetails(props.match.params.id)
+      : getVideoDetails(firstVideoID)
   }
 
   const getVideoDetails = videoID => {
@@ -51,11 +49,7 @@ const Main = props => {
   }
 
   const changeData = newVideoID => {
-    if (newVideoID === undefined) {
-      getVideoDetails(defaultVidID)
-    } else {
-      getVideoDetails(newVideoID)
-    }
+    newVideoID === undefined ? getVideoDetails(defaultVidID) : getVideoDetails(newVideoID)
   }
 
   const commentTextbox = event => {
