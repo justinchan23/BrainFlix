@@ -3,8 +3,9 @@ import Aside from './Aside'
 import CommentsSection from './CommentsSection'
 
 const MainContent = props => {
-  const { title, channel, views, likes, description } = props.currentVideo
+  const { title, channel, views, likes, description, timestamp } = props.currentVideo
   const { currentVideo, commentTextbox, addComment, itemText, deleteComment, videoList } = props
+  const date = new Date(timestamp).toLocaleDateString()
   return (
     <content className="main__content slide-in-blurred-bottom">
       <div className="main__contentMain">
@@ -13,7 +14,7 @@ const MainContent = props => {
           <div className="main__descriptionDiv">
             <div className="main__descriptionAuthorDate">
               <h4 className="main__descriptionName">BY {channel}</h4>
-              <h5 className="main__descriptionDate">12/18/2018</h5>
+              <h5 className="main__descriptionDate">{date}</h5>
             </div>
             <div className="main__descriptionViewsLikes">
               <img
