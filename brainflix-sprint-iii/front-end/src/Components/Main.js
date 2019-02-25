@@ -73,7 +73,7 @@ const Main = props => {
       alert('Please enter a valid comment')
     } else {
       axios
-        .post(apiURL + currentVideo.id + '/comments' + data, header)
+        .post(apiURL + currentVideo.id + '/comments', data, header)
         .then(() => {
           setItemText('')
           axios

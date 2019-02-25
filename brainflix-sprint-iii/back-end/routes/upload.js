@@ -37,11 +37,11 @@ router.post('/', (req, res, next) => {
   videoDetails.push(newVideoDetails)
 
   fs.writeFile('./routes/database/videos.json', JSON.stringify(videos), () =>
-    console.log('success')
+    console.log('New video added to db.')
   )
 
   fs.writeFile('./routes/database/videoDetails.json', JSON.stringify(videoDetails), () =>
-    console.log('success')
+    console.log('New video details added to db.')
   )
 
   res.status(200).send({
