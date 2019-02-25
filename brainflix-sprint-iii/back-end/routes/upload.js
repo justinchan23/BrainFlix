@@ -36,13 +36,9 @@ router.post('/', (req, res, next) => {
   videos.push(newVideo)
   videoDetails.push(newVideoDetails)
 
-  fs.writeFile('./routes/database/videos.json', JSON.stringify(videos), () =>
-    console.log('New video added to db.')
-  )
+  fs.writeFileSync('./routes/database/videos.json', JSON.stringify(videos))
 
-  fs.writeFile('./routes/database/videoDetails.json', JSON.stringify(videoDetails), () =>
-    console.log('New video details added to db.')
-  )
+  fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
 
   res.status(200).send({
     success: true,

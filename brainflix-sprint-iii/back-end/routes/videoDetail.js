@@ -19,6 +19,7 @@ router.put('/:id/likes', (req, res) => {
   var idLocation = ids.indexOf(id)
   if (idLocation !== -1) {
     videoDetails[idLocation].likes += 1
+    fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
     res.status(200).send(videoDetails[idLocation])
   } else {
     res.status(404).send({ message: 'No video with that id exists' })
@@ -45,9 +46,7 @@ router.post('/:id/comments', (req, res) => {
   var idLocation = ids.indexOf(id)
   if (idLocation !== -1) {
     videoDetails[idLocation].comments.push(newComment)
-    fs.writeFile('./routes/database/videoDetails.json', JSON.stringify(videoDetails), () =>
-      console.log('New comment added to db.')
-    )
+    fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
     res.status(200).send(newComment)
   } else {
     res.status(404).send({ message: 'No video with that id exists' })
@@ -68,9 +67,7 @@ router.delete('/:id/comments/:idComment', (req, res) => {
     commentArray.splice(commentLocation, 1)
     videoDetails[idLocation].comments = commentArray
 
-    fs.writeFile('./routes/database/videoDetails.json', JSON.stringify(videoDetails), () =>
-      console.log('Comment deleted')
-    )
+    fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
 
     res.status(200).send(videoDetails[idLocation].comments[commentLocation])
   } else {
