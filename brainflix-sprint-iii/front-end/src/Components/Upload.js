@@ -25,7 +25,9 @@ const Upload = () => {
       axios
         .post(apiURL, data, header)
         .then(response => {
-          console.log(response)
+          // console.log(response)
+          title.current.value = ''
+          description.current.value = ''
         })
         .catch(error => console.log(error))
     }

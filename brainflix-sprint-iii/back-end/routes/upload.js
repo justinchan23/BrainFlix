@@ -9,14 +9,14 @@ router.post('/', (req, res, next) => {
     id: 'newid',
     title: req.body.title,
     channel: 'Justin Chan',
-    image: 'https://i.imgur.com/l2Xfgpl.jpg'
+    image: 'https://i.imgur.com/gUuqWIQ.jpg'
   }
 
   var newVideoDetails = {
     id: 'newid',
     title: req.body.title,
     channel: 'Justin Chan',
-    image: 'https://i.imgur.com/i6S8m7I.jpg',
+    image: 'https://i.imgur.com/gUuqWIQ.jpg',
     description: req.body.description,
     views: '0',
     likes: '0',
