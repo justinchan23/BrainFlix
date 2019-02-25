@@ -25,9 +25,9 @@ router.post('/', (req, res, next) => {
     channel: 'Justin Chan',
     image: 'https://i.imgur.com/gUuqWIQ.jpg',
     description: req.body.description,
-    views: '0',
-    likes: '0',
-    duration: '1:00',
+    views: 0,
+    likes: 0,
+    duration: '1:23',
     video: 'https://project-2-api.herokuapp.com/stream',
     timestamp: Math.floor(new Date().getTime()),
     comments: []

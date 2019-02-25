@@ -3,8 +3,16 @@ import Aside from './Aside'
 import CommentsSection from './CommentsSection'
 
 const MainContent = props => {
-  const { title, channel, views, likes, description, timestamp } = props.currentVideo
-  const { currentVideo, commentTextbox, addComment, itemText, deleteComment, videoList } = props
+  const { title, channel, views, likes, description, timestamp, id } = props.currentVideo
+  const {
+    currentVideo,
+    commentTextbox,
+    addComment,
+    itemText,
+    deleteComment,
+    videoList,
+    likeVideo
+  } = props
   const date = new Date(timestamp).toLocaleDateString()
   return (
     <content className="main__content">
@@ -22,14 +30,20 @@ const MainContent = props => {
                 className="main__descriptionIcon"
                 alt=""
               />
-              <h5 className="main__descriptionNum">{views}</h5>
-
-              <img
-                src="./Assets/Icons/SVG/Icon-likes.svg"
-                className="main__descriptionIcon"
-                alt=""
-              />
-              <h5 className="main__descriptionNum">{likes}</h5>
+              <h5 className="main__descriptionNum">{views.toLocaleString()}</h5>
+              <button
+                className="main__likeButton"
+                onClick={() => {
+                  likeVideo(id)
+                }}
+              >
+                <img
+                  src="./Assets/Icons/SVG/Icon-likes.svg"
+                  className="main__descriptionIcon"
+                  alt=""
+                />
+              </button>
+              <h5 className="main__descriptionNum">{likes.toLocaleString()}</h5>
             </div>
           </div>
         </div>

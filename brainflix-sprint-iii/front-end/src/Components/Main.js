@@ -101,6 +101,15 @@ const Main = props => {
       .catch(error => console.log(error))
   }
 
+  const likeVideo = id => {
+    axios
+      .put(apiURL + id + '/likes')
+      .then(response => setCurrentVideo(response.data))
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   // componentdidmount/didupdate
   useEffect(() => {
     pageLoaded ? changeData(props.match.params.id) : getData()
@@ -126,6 +135,7 @@ const Main = props => {
             itemText={itemText}
             deleteComment={deleteComment}
             videoList={videosList}
+            likeVideo={likeVideo}
           />
         )}
         <TopButton />

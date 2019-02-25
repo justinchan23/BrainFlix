@@ -764,6 +764,21 @@ textarea:focus::placeholder {
   color: #323232;
 }
 
+.main__likeButton {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.main__likeButton:hover {
+  background: #0095ff;
+  padding: 0;
+}
+
+.main__likeButton:focus {
+  outline: none;
+}
+
 hr {
   margin: 24px 0;
   border: 0.5px solid #e1e1e1;

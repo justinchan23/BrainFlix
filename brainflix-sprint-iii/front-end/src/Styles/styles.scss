@@ -689,6 +689,21 @@ textarea:focus::placeholder {
     width: 520px;
     color: $black;
   }
+
+  &__likeButton {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  &__likeButton:hover {
+    background: $blue;
+    padding: 0;
+  }
+
+  &__likeButton:focus {
+    outline: none;
+  }
 }
 
 hr {
