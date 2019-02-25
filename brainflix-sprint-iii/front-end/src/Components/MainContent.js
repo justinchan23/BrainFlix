@@ -15,7 +15,7 @@ const MainContent = props => {
   } = props
   const date = new Date(timestamp).toLocaleDateString()
   return (
-    <content className="main__content">
+    <content className="main__content slide-in-blurred-bottom">
       <div className="main__contentMain">
         <div className="main__contentMainDiv">
           <h1 className="main__descriptionHeader">{title}</h1>

@@ -47,7 +47,7 @@ const MainVideo = props => {
 
   const { poster, duration, src } = props
   return (
-    <main className="main">
+    <main className="main swirl-in-fwd">
       <div className="main__videoImage">
         <video
           poster={poster}
