@@ -55,4 +55,28 @@ router.post('/:id/comments', (req, res) => {
   }
 })
 
+router.delete('/:id/comments/:idComment', (req, res) => {
+  var id = req.params.id
+  var ids = videoDetails.map(video => video.id)
+  var idLocation = ids.indexOf(id)
+
+  var idComment = req.params.idComment
+  var commentIds = videoDetails[idLocation].comments.map(comment => comment.id)
+  var commentLocation = commentIds.indexOf(idComment)
+
+  if (commentLocation !== -1) {
+    const commentArray = videoDetails[idLocation].comments.slice(0)
+    commentArray.splice(commentLocation, 1)
+    videoDetails[idLocation].comments = commentArray
+
+    fs.writeFile('./routes/database/videoDetails.json', JSON.stringify(videoDetails), () =>
+      console.log('Comment deleted')
+    )
+
+    res.status(200).send(videoDetails[idLocation].comments[commentLocation])
+    console.log('found')
+  } else {
+    res.status(404).send({ message: 'Error 404' })
+  }
+})
 module.exports = router
