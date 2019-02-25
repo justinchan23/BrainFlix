@@ -28,6 +28,7 @@ const Upload = () => {
           // console.log(response)
           title.current.value = ''
           description.current.value = ''
+          alert('Upload successful')
         })
         .catch(error => console.log(error))
     }

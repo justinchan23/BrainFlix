@@ -1,19 +1,26 @@
 const express = require('express')
 const router = express.Router()
 const fs = require('fs')
+const randomstring = require('randomstring')
 const videos = require('./database/videos')
 const videoDetails = require('./database/videoDetails')
 
 router.post('/', (req, res, next) => {
+  var id = randomstring.generate({
+    length: 12,
+    charset: 'alphanumeric',
+    capitalization: 'lowercase'
+  })
+
   var newVideo = {
-    id: 'newid',
+    id: id,
     title: req.body.title,
     channel: 'Justin Chan',
     image: 'https://i.imgur.com/gUuqWIQ.jpg'
   }
 
   var newVideoDetails = {
-    id: 'newid',
+    id: id,
     title: req.body.title,
     channel: 'Justin Chan',
     image: 'https://i.imgur.com/gUuqWIQ.jpg',
