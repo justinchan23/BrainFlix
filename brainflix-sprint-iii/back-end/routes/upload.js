@@ -5,10 +5,6 @@ const videos = require('./database/videos')
 const videoDetails = require('./database/videoDetails')
 
 router.post('/', (req, res, next) => {
-  // var body = JSON.stringify(req.body)
-
-  // console.log(req.body.title)
-  // console.log(req.body.description)
   var newVideo = {
     id: 'newid',
     title: req.body.title,
@@ -32,9 +28,7 @@ router.post('/', (req, res, next) => {
 
   videos.push(newVideo)
   videoDetails.push(newVideoDetails)
-  // console.log(data)
-  // var new1 = JSON.stringify(newData)
-  // console.log(JSON.stringify(data))
+
   fs.writeFile('./routes/database/videos.json', JSON.stringify(videos), () =>
     console.log('success')
   )
