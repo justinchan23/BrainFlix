@@ -7,7 +7,7 @@ const Upload = () => {
   const description = useRef()
 
   const upload = event => {
-    // event.preventDefault()
+    event.preventDefault()
     var data = {
       title: title.current.value,
       description: description.current.value
@@ -25,7 +25,6 @@ const Upload = () => {
       axios
         .post(apiURL, data, header)
         .then(response => {
-          // console.log(response)
           title.current.value = ''
           description.current.value = ''
           alert('Upload successful')

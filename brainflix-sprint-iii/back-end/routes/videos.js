@@ -8,9 +8,3 @@ router.get('/', (req, res, next) => {
 })
 
 module.exports = router
-
-// res.status(200).send({
-//   success: true,
-//   message: 'Videos retrieved successfully',
-//   videos: videos
-// })

@@ -11,7 +11,6 @@ router.get('/:id', (req, res) => {
   idLocation !== -1
     ? res.status(200).send(videoDetails[idLocation])
     : res.status(404).send({ message: 'No video with that id exists' })
-  // next()
 })
 
 router.put('/:id/likes', (req, res) => {
@@ -74,7 +73,6 @@ router.delete('/:id/comments/:idComment', (req, res) => {
     )
 
     res.status(200).send(videoDetails[idLocation].comments[commentLocation])
-    console.log('found')
   } else {
     res.status(404).send({ message: 'Error 404' })
   }

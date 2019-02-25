@@ -20,7 +20,6 @@ const Main = props => {
       .get(apiURL)
       .then(response => {
         setVideosList(response.data)
-        // firstVideoID = response.data[0].id
         setDefaultVidID((firstVideoID = response.data[0].id))
         videoIDs = response.data.map(video => video.id)
       })
@@ -54,7 +53,6 @@ const Main = props => {
 
   const commentTextbox = event => {
     setItemText(event.target.value)
-    // console.log(itemText)
   }
 
   const addComment = () => {
@@ -110,7 +108,6 @@ const Main = props => {
       })
   }
 
-  // componentdidmount/didupdate
   useEffect(() => {
     pageLoaded ? changeData(props.match.params.id) : getData()
   }, [props.match.params.id])
