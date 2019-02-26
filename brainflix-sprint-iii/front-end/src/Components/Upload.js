@@ -30,6 +30,11 @@ const Upload = () => {
     }
   }
 
+  const cancel = () => {
+    title.current.value = ''
+    description.current.value = ''
+  }
+
   return (
     <div>
       <main className="main__upload">
@@ -64,7 +69,9 @@ const Upload = () => {
             </div>
           </div>
           <div className="main__uploadButtons">
-            <button className="main__cancelButton">CANCEL</button>
+            <button className="main__cancelButton" onClick={cancel}>
+              CANCEL
+            </button>
             <button className="main__uploadButton" onClick={upload}>
               PUBLISH
             </button>
