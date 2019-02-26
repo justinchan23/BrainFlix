@@ -32,9 +32,8 @@ const Main = props => {
   }
 
   const getVideo = () => {
-    props.match.params.id && videoIDs.indexOf(props.match.params.id) !== -1
-      ? getVideoDetails(props.match.params.id)
-      : getVideoDetails(firstVideoID)
+    const { id } = props.match.params
+    id && videoIDs.indexOf(id) !== -1 ? getVideoDetails(id) : getVideoDetails(firstVideoID)
   }
 
   const getVideoDetails = videoID => {
