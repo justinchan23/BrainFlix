@@ -6,20 +6,20 @@ const videos = require('./database/videos')
 const videoDetails = require('./database/videoDetails')
 
 router.post('/', (req, res, next) => {
-  var id = randomstring.generate({
+  const id = randomstring.generate({
     length: 12,
     charset: 'alphanumeric',
     capitalization: 'lowercase'
   })
 
-  var newVideo = {
+  const newVideo = {
     id: id,
     title: req.body.title,
     channel: 'Justin Chan',
     image: 'https://i.imgur.com/gUuqWIQ.jpg'
   }
 
-  var newVideoDetails = {
+  const newVideoDetails = {
     id: id,
     title: req.body.title,
     channel: 'Justin Chan',
