@@ -22,14 +22,11 @@ const Upload = () => {
     if (title.current.value.length < 2 || description.current.value.length < 2) {
       alert('Please enter a valid comment')
     } else {
-      axios
-        .post(apiURL, data, header)
-        .then(response => {
-          title.current.value = ''
-          description.current.value = ''
-          alert('Upload successful')
-        })
-        .catch(error => console.log(error))
+      axios.post(apiURL, data, header).then(response => {
+        title.current.value = ''
+        description.current.value = ''
+        alert('Upload successful')
+      })
     }
   }
 
