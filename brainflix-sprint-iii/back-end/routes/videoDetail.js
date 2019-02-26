@@ -5,7 +5,7 @@ const fs = require('fs')
 const videoDetails = require('./database/videoDetails')
 const videos = require('./database/videos')
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.status(200).send(videos)
 })
 
