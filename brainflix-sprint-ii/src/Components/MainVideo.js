@@ -9,19 +9,19 @@ const MainVideo = props => {
   const videoEnded = () => {
     video.current.load()
     setVideoPlay(false)
-    setPlayPauseButton('./Assets/Icons/SVG/Icon-play.svg')
+    setPlayPauseButton('../Assets/Icons/SVG/Icon-play.svg')
   }
 
   const playVideo = () => {
     video.current.play()
     setVideoPlay(true)
-    setPlayPauseButton('./Assets/Icons/SVG/Icon-pause.svg')
+    setPlayPauseButton('../Assets/Icons/SVG/Icon-pause.svg')
   }
 
   const pauseVideo = () => {
     video.current.pause()
     setVideoPlay(false)
-    setPlayPauseButton('./Assets/Icons/SVG/Icon-play.svg')
+    setPlayPauseButton('../Assets/Icons/SVG/Icon-play.svg')
   }
 
   const playOrPause = () => {
@@ -73,13 +73,13 @@ const MainVideo = props => {
             }}
           >
             <img
-              src="./Assets/Icons/SVG/Icon-fullscreen.svg"
+              src="../Assets/Icons/SVG/Icon-fullscreen.svg"
               alt=""
               className="main__videoFullscreen"
             />
           </button>
           <button className="main__videoButtonRight" onClick={muteVideo}>
-            <img src="./Assets/Icons/SVG/Icon-volume.svg" alt="" className="main__videoVolume" />
+            <img src="../Assets/Icons/SVG/Icon-volume.svg" alt="" className="main__videoVolume" />
           </button>
         </div>
       </div>

@@ -18,14 +18,14 @@ const MainContent = props => {
             </div>
             <div className="main__descriptionViewsLikes">
               <img
-                src="./Assets/Icons/SVG/Icon-views.svg"
+                src="../Assets/Icons/SVG/Icon-views.svg"
                 className="main__descriptionIcon"
                 alt=""
               />
               <h5 className="main__descriptionNum">{views}</h5>
 
               <img
-                src="./Assets/Icons/SVG/Icon-likes.svg"
+                src="../Assets/Icons/SVG/Icon-likes.svg"
                 className="main__descriptionIcon"
                 alt=""
               />

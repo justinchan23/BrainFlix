@@ -14,7 +14,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/upload" component={Upload} />
-            <Route path="/:id" component={Main} />
+            <Route path="/videos/:id" component={Main} />
           </Switch>
         </div>
       </BrowserRouter>
