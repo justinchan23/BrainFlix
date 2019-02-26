@@ -8,7 +8,7 @@ const Nav = () => {
         <div className="nav__items">
           <div className="nav__item">
             <Link to="/">
-              <img src={'./Assets/Logo/Logo-brainflix.png'} className="nav__logo" alt="" />
+              <img src={'../Assets/Logo/Logo-brainflix.png'} className="nav__logo" alt="" />
             </Link>
           </div>
           <div className="nav__item">
@@ -22,7 +22,7 @@ const Nav = () => {
             <Link to="/upload">
               <button className="nav__button nav__spacing">+ UPLOAD</button>
             </Link>
-            <img src={'./Assets/Images/Mohan-muruge.jpg'} className="nav__profilePic" alt="" />
+            <img src={'../Assets/Images/Mohan-muruge.jpg'} className="nav__profilePic" alt="" />
           </div>
         </div>
       </nav>

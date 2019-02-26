@@ -26,7 +26,7 @@ const MainContent = props => {
             </div>
             <div className="main__descriptionViewsLikes">
               <img
-                src="./Assets/Icons/SVG/Icon-views.svg"
+                src="../Assets/Icons/SVG/Icon-views.svg"
                 className="main__descriptionIcon"
                 alt=""
               />
@@ -38,7 +38,7 @@ const MainContent = props => {
                 }}
               >
                 <img
-                  src="./Assets/Icons/SVG/Icon-likes.svg"
+                  src="../Assets/Icons/SVG/Icon-likes.svg"
                   className="main__descriptionIcon"
                   alt=""
                 />

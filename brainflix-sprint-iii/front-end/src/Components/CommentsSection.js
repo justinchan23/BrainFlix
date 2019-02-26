@@ -22,7 +22,7 @@ const CommentsSection = props => {
       <div className="commentContent__main">
         <h3 className="commentContent__commentNum">{currentVideo.comments.length} Comments</h3>
         <div className="commentContent__section">
-          <img src="./Assets/Images/Mohan-muruge.jpg" className="commentContent__pic" alt="" />
+          <img src="../Assets/Images/Mohan-muruge.jpg" className="commentContent__pic" alt="" />
           <form id="commentSubmit" onSubmit={event => event.preventDefault()}>
             <label>JOIN THE CONVERSATION</label>
             <textarea

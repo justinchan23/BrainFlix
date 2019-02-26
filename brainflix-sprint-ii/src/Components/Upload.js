@@ -14,7 +14,7 @@ const Upload = () => {
             <div className="main__uploadThumb">
               <label>VIDEO THUMBNAIL</label>
               <img
-                src="./Assets/Images/Upload-video-preview.jpg"
+                src="../Assets/Images/Upload-video-preview.jpg"
                 alt=""
                 className="main__uploadPic"
               />
