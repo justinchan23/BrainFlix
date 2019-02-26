@@ -1,5 +1,3 @@
-Note: Work in progress ...
-
 To view:
 
 1. Clone or Download this repository

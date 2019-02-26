@@ -11,16 +11,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  const id = req.params.id
-  const idLocation = ids.indexOf(id)
+  const idLocation = ids.indexOf(req.params.id)
   idLocation !== -1
     ? res.status(200).send(videoDetails[idLocation])
     : res.status(404).send({ message: 'No video with that id exists' })
 })
 
 router.put('/:id/likes', (req, res) => {
-  const id = req.params.id
-  const idLocation = ids.indexOf(id)
+  const idLocation = ids.indexOf(req.params.id)
   if (idLocation !== -1) {
     videoDetails[idLocation].likes += 1
     fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
@@ -45,8 +43,7 @@ router.post('/:id/comments', (req, res) => {
     timestamp: Math.floor(new Date().getTime())
   }
 
-  const id = req.params.id
-  const idLocation = ids.indexOf(id)
+  const idLocation = ids.indexOf(req.params.id)
   if (idLocation !== -1) {
     videoDetails[idLocation].comments.push(newComment)
     fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
@@ -57,12 +54,9 @@ router.post('/:id/comments', (req, res) => {
 })
 
 router.delete('/:id/comments/:idComment', (req, res) => {
-  const id = req.params.id
-  const idLocation = ids.indexOf(id)
-
-  const idComment = req.params.idComment
+  const idLocation = ids.indexOf(req.params.id)
   const commentIds = videoDetails[idLocation].comments.map(comment => comment.id)
-  const commentLocation = commentIds.indexOf(idComment)
+  const commentLocation = commentIds.indexOf(req.params.idComment)
 
   if (commentLocation !== -1) {
     const commentArray = videoDetails[idLocation].comments.slice(0)
