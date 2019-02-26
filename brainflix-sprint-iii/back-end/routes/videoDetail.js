@@ -4,6 +4,7 @@ const randomstring = require('randomstring')
 const fs = require('fs')
 const videoDetails = require('./database/videoDetails')
 const videos = require('./database/videos')
+const ids = videoDetails.map(video => video.id)
 
 router.get('/', (req, res) => {
   res.status(200).send(videos)
@@ -11,7 +12,6 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  const ids = videoDetails.map(video => video.id)
   const idLocation = ids.indexOf(id)
   idLocation !== -1
     ? res.status(200).send(videoDetails[idLocation])
@@ -20,7 +20,6 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id/likes', (req, res) => {
   const id = req.params.id
-  const ids = videoDetails.map(video => video.id)
   const idLocation = ids.indexOf(id)
   if (idLocation !== -1) {
     videoDetails[idLocation].likes += 1
@@ -47,7 +46,6 @@ router.post('/:id/comments', (req, res) => {
   }
 
   const id = req.params.id
-  const ids = videoDetails.map(video => video.id)
   const idLocation = ids.indexOf(id)
   if (idLocation !== -1) {
     videoDetails[idLocation].comments.push(newComment)
@@ -60,7 +58,6 @@ router.post('/:id/comments', (req, res) => {
 
 router.delete('/:id/comments/:idComment', (req, res) => {
   const id = req.params.id
-  const ids = videoDetails.map(video => video.id)
   const idLocation = ids.indexOf(id)
 
   const idComment = req.params.idComment
