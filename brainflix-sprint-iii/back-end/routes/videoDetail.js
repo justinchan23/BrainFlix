@@ -3,6 +3,11 @@ const router = express.Router()
 const randomstring = require('randomstring')
 const fs = require('fs')
 const videoDetails = require('./database/videoDetails')
+const videos = require('./database/videos')
+
+router.get('/', (req, res, next) => {
+  res.status(200).send(videos)
+})
 
 router.get('/:id', (req, res) => {
   var id = req.params.id

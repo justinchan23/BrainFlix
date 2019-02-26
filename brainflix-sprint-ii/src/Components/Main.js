@@ -29,7 +29,6 @@ const Main = props => {
       .then(() => {
         setPageLoaded(true)
       })
-      .catch(error => console.log(error))
   }
 
   const getVideo = () => {
@@ -39,12 +38,9 @@ const Main = props => {
   }
 
   const getVideoDetails = videoID => {
-    axios
-      .get(apiURL + videoID + apiKEY)
-      .then(response => {
-        setCurrentVideo(response.data)
-      })
-      .catch(error => console.log(error))
+    axios.get(apiURL + videoID + apiKEY).then(response => {
+      setCurrentVideo(response.data)
+    })
   }
 
   const changeData = newVideoID => {
@@ -70,33 +66,21 @@ const Main = props => {
     if (itemText.length < 2) {
       alert('Please enter a valid comment')
     } else {
-      axios
-        .post(apiURL + currentVideo.id + '/comments' + apiKEY, data, header)
-        .then(() => {
-          setItemText('')
-          axios
-            .get(apiURL + currentVideo.id + apiKEY)
-            .then(response => {
-              setCurrentVideo(response.data)
-            })
-            .catch(error => console.log(error))
+      axios.post(apiURL + currentVideo.id + '/comments' + apiKEY, data, header).then(() => {
+        setItemText('')
+        axios.get(apiURL + currentVideo.id + apiKEY).then(response => {
+          setCurrentVideo(response.data)
         })
-        .catch(error => console.log(error))
+      })
     }
   }
 
   const deleteComment = id => {
-    axios
-      .delete(apiURL + currentVideo.id + '/comments/' + id + apiKEY)
-      .then(() => {
-        axios
-          .get(apiURL + currentVideo.id + apiKEY)
-          .then(response => {
-            setCurrentVideo(response.data)
-          })
-          .catch(error => console.log(error))
+    axios.delete(apiURL + currentVideo.id + '/comments/' + id + apiKEY).then(() => {
+      axios.get(apiURL + currentVideo.id + apiKEY).then(response => {
+        setCurrentVideo(response.data)
       })
-      .catch(error => console.log(error))
+    })
   }
 
   useEffect(() => {
