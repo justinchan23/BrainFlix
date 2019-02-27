@@ -51,12 +51,12 @@ const Main = props => {
   }
 
   const addComment = () => {
-    var data = {
+    const data = {
       name: 'Justin',
       comment: itemText
     }
 
-    var header = {
+    const header = {
       headers: {
         'Content-Type': 'application/json'
       }
