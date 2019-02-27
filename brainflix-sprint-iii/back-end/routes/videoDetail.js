@@ -4,21 +4,20 @@ const randomstring = require('randomstring')
 const fs = require('fs')
 const videoDetails = require('./database/videoDetails')
 const videos = require('./database/videos')
-const ids = videoDetails.map(video => video.id)
 
 router.get('/', (req, res) => {
   res.status(200).send(videos)
 })
 
 router.get('/:id', (req, res) => {
-  const idLocation = ids.indexOf(req.params.id)
-  idLocation !== -1
-    ? res.status(200).send(videoDetails[idLocation])
+  const data = videoDetails.find(video => video.id === req.params.id)
+  data
+    ? res.status(200).send(data)
     : res.status(404).send({ message: 'No video with that id exists' })
 })
 
 router.put('/:id/likes', (req, res) => {
-  const idLocation = ids.indexOf(req.params.id)
+  const idLocation = videoDetails.findIndex(video => video.id === req.params.id)
   if (idLocation !== -1) {
     videoDetails[idLocation].likes += 1
     fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
@@ -43,7 +42,7 @@ router.post('/:id/comments', (req, res) => {
     timestamp: Math.floor(new Date().getTime())
   }
 
-  const idLocation = ids.indexOf(req.params.id)
+  const idLocation = videoDetails.findIndex(video => video.id === req.params.id)
   if (idLocation !== -1) {
     videoDetails[idLocation].comments.push(newComment)
     fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
@@ -54,9 +53,10 @@ router.post('/:id/comments', (req, res) => {
 })
 
 router.delete('/:id/comments/:idComment', (req, res) => {
-  const idLocation = ids.indexOf(req.params.id)
-  const commentIds = videoDetails[idLocation].comments.map(comment => comment.id)
-  const commentLocation = commentIds.indexOf(req.params.idComment)
+  const idLocation = videoDetails.findIndex(video => video.id === req.params.id)
+  const commentLocation = videoDetails[idLocation].comments.findIndex(
+    comment => comment.id === req.params.idComment
+  )
 
   if (commentLocation !== -1) {
     const commentArray = videoDetails[idLocation].comments.slice(0)
@@ -69,4 +69,5 @@ router.delete('/:id/comments/:idComment', (req, res) => {
     res.status(404).send({ message: 'Error 404' })
   }
 })
+
 module.exports = router
