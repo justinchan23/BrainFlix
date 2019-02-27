@@ -270,7 +270,7 @@ a:visited {
 }
 
 .main progress::-webkit-progress-value {
-  background-color: black;
+  background-color: #0095ff;
 }
 
 .main progress::-webkit-progress-bar {
@@ -762,6 +762,21 @@ textarea:focus::placeholder {
 .main__videoFullDescription {
   width: 520px;
   color: #323232;
+}
+
+.main__likeButton {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.main__likeButton:hover {
+  background: #0095ff;
+  padding: 0;
+}
+
+.main__likeButton:focus {
+  outline: none;
 }
 
 hr {
