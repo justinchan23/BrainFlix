@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import axios from 'axios'
 
 const Upload = () => {
-  const apiURL = 'http://localhost:8080/upload'
+  const apiURL = 'http://localhost:8080/videos'
   const title = useRef()
   const description = useRef()
 
