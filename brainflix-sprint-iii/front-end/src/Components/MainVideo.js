@@ -53,7 +53,7 @@ const MainVideo = props => {
   useEffect(() => {
     videoEnded()
     setVidDuration(duration)
-  }, [props.poster])
+  }, [poster])
 
   return (
     <main className="main">

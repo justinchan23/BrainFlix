@@ -74,7 +74,7 @@ const MainVideo = props => {
         <div className="main__videoSlider">
           <progress className="main__videoBar" value={progressBar} min="0" max="10" />
           <h6 className="main__videoTime">
-            0:0{progressBar} / {duration}
+            0:0{progressBar} / {vidDuration}
           </h6>
         </div>
         <div className="main__buttonRight">
