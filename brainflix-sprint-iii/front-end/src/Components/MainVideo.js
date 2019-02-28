@@ -6,17 +6,20 @@ const MainVideo = props => {
   const [videoMute, setVideoMute] = useState(false)
   const [progressBar, setProgressBar] = useState(0)
   const video = useRef()
+  const [vidDuration, setVidDuration] = useState()
   const { poster, duration, src } = props
 
   const videoEnded = () => {
     video.current.load()
     setVideoPlay(false)
+    setVidDuration(duration)
     setPlayPauseButton('../Assets/Icons/SVG/Icon-play.svg')
   }
 
   const playVideo = () => {
     video.current.play()
     setVideoPlay(true)
+    setVidDuration('0:' + Math.floor(video.current.duration))
     setPlayPauseButton('../Assets/Icons/SVG/Icon-pause.svg')
   }
 
@@ -44,11 +47,12 @@ const MainVideo = props => {
   }
 
   const progress = () => {
-    setProgressBar(video.current.currentTime)
+    setProgressBar(Math.floor(video.current.currentTime))
   }
 
   useEffect(() => {
     videoEnded()
+    setVidDuration(duration)
   }, [props.poster])
 
   return (
@@ -69,7 +73,9 @@ const MainVideo = props => {
         </button>
         <div className="main__videoSlider">
           <progress className="main__videoBar" value={progressBar} min="0" max="10" />
-          <h6 className="main__videoTime">0:00 / {duration}</h6>
+          <h6 className="main__videoTime">
+            0:0{progressBar} / {vidDuration}
+          </h6>
         </div>
         <div className="main__buttonRight">
           <button
