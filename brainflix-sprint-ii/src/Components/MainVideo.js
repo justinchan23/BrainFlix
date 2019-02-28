@@ -4,7 +4,9 @@ const MainVideo = props => {
   const [videoPlay, setVideoPlay] = useState(false)
   const [playPauseButton, setPlayPauseButton] = useState('./Assets/Icons/SVG/Icon-play.svg')
   const [videoMute, setVideoMute] = useState(false)
+  const [progressBar, setProgressBar] = useState(0)
   const video = useRef()
+  const { poster, duration, src } = props
 
   const videoEnded = () => {
     video.current.load()
@@ -41,11 +43,14 @@ const MainVideo = props => {
     video.current.requestFullscreen()
   }
 
+  const progress = () => {
+    setProgressBar(video.current.currentTime)
+  }
+
   useEffect(() => {
     videoEnded()
   }, [props.poster])
 
-  const { poster, duration, src } = props
   return (
     <main className="main swirl-in-fwd">
       <div className="main__videoImage">
@@ -55,6 +60,7 @@ const MainVideo = props => {
           ref={video}
           className="main__videoImageFull"
           onEnded={videoEnded}
+          onTimeUpdate={progress}
         />
       </div>
       <div className="main__videoControls">
@@ -62,7 +68,7 @@ const MainVideo = props => {
           <img src={playPauseButton} alt="" />
         </button>
         <div className="main__videoSlider">
-          <progress className="main__videoBar" value="0" min="0" max="100" />
+          <progress className="main__videoBar" value={progressBar} min="0" max="10" />
           <h6 className="main__videoTime">0:00 / {duration}</h6>
         </div>
         <div className="main__buttonRight">
