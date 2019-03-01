@@ -5,11 +5,9 @@ const fs = require('fs')
 const videoDetails = require('./database/videoDetails')
 const videos = require('./database/videos')
 
-router.get('/', (req, res) => {
-  res.status(200).send(videos)
-})
+router.get('/', (req, res) => res.status(200).send(videos))
 
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
   const id = randomstring.generate({
     length: 12,
     charset: 'alphanumeric',
@@ -107,7 +105,7 @@ router.delete('/:id/comments/:idComment', (req, res) => {
     fs.writeFileSync('./routes/database/videoDetails.json', JSON.stringify(videoDetails))
     res.status(200).send(videoDetails[idLocation].comments[commentLocation])
   } else {
-    res.status(404).send({ message: 'Error 404' })
+    res.status(404).send({ message: 'Error cannot find comment with that id.' })
   }
 })
 
