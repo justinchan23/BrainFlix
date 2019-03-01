@@ -1,4 +1,3 @@
-Available Scripts
-In the project directory, to start the server:
+To start the server, in the project directory run:
 
 npm start
