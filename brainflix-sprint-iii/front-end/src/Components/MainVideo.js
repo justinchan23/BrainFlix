@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react'
 
-const MainVideo = props => {
+const MainVideo = ({ poster, duration, src }) => {
   const [videoPlay, setVideoPlay] = useState(false)
   const [playPauseButton, setPlayPauseButton] = useState('../Assets/Icons/SVG/Icon-play.svg')
   const [videoMute, setVideoMute] = useState(false)
   const [progressBar, setProgressBar] = useState(0)
   const video = useRef()
   const [vidDuration, setVidDuration] = useState()
-  const { poster, duration, src } = props
 
   const videoEnded = () => {
     video.current.load()

@@ -2,8 +2,7 @@ import React from 'react'
 import Comment from './Comment'
 import dateCalculator from '../Scripts/dateCalculator'
 
-const CommentsSection = props => {
-  const { currentVideo, commentTextbox, itemText, addComment, deleteComment } = props
+const CommentsSection = ({ currentVideo, commentTextbox, itemText, addComment, deleteComment }) => {
   var commentList = currentVideo.comments.map((comment, i) => {
     var dateSince = dateCalculator(comment.timestamp)
     return (

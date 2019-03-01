@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Comment = props => {
-  const { name, dateSince, comment, id, deleteComment } = props
+const Comment = ({ name, dateSince, comment, id, deleteComment }) => {
   return (
     <div className="commentJava__section">
       <img src="../Assets/Images/Mohan-muruge.jpg" className="commentJava__pic" alt="" />

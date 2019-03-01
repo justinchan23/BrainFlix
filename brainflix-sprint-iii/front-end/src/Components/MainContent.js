@@ -2,17 +2,17 @@ import React from 'react'
 import Aside from './Aside'
 import CommentsSection from './CommentsSection'
 
-const MainContent = props => {
-  const { title, channel, views, likes, description, timestamp, id } = props.currentVideo
-  const {
-    currentVideo,
-    commentTextbox,
-    addComment,
-    itemText,
-    deleteComment,
-    videoList,
-    likeVideo
-  } = props
+const MainContent = ({
+  currentVideo,
+  commentTextbox,
+  addComment,
+  itemText,
+  deleteComment,
+  videoList,
+  likeVideo
+}) => {
+  const { title, channel, views, likes, description, timestamp, id } = currentVideo
+
   const date = new Date(timestamp).toLocaleDateString()
   return (
     <content className="main__content slide-in-blurred-bottom">

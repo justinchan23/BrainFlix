@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Video = props => {
-  const { videoImage, videoTitle, videoChannel, videoId, currentVideo } = props
+const Video = ({ videoImage, videoTitle, videoChannel, videoId, currentVideo }) => {
   var divId = ''
   if (videoId === currentVideo.id) {
     divId = 'currentVideo'
