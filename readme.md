@@ -1,3 +1,5 @@
+BrainFlix is a video player site similar to Youtube.
+
 Full Stack Single Page React Application
 
 To view:
